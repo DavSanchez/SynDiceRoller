@@ -1,5 +1,6 @@
 package es.ulpgc.eite.alu.diceroller.android.screen.presenter;
 
+import es.ulpgc.eite.alu.diceroller.android.screen.view.I_DiceRollerView;
 import es.ulpgc.eite.framework.android.AndroidScreenPresenter;
 import es.ulpgc.eite.framework.core.screen.I_ScreenState;
 import es.ulpgc.eite.framework.core.screen.I_ScreenView;
@@ -8,9 +9,14 @@ import es.ulpgc.eite.framework.core.screen.I_ScreenView;
  * Created by David on 12/4/16.
  */
 public class DiceRollerPresenter extends AndroidScreenPresenter implements I_DiceRollerPresenter {
+
+    private I_DiceRollerView getDiceRollerView(){
+        return (I_DiceRollerView) getScreenView();
+    }
     @Override
     public void createScreen() {
-
+        debug("createScreen");
+        getDiceRollerView().setLayout();
     }
 
     @Override
