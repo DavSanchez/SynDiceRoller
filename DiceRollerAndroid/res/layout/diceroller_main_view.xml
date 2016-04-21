@@ -1,8 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+>
+    <LinearLayout
+            android:id="@+id/linearLayoutH1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:orientation="vertical"
+            android:weightSum="1" >
+        <EditText
+                android:id="@+id/display"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"/>
+    </LinearLayout>
 
-</RelativeLayout>
+    <LinearLayout
+            android:id="@+id/linearLayoutH2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".25"
+            android:orientation="horizontal"
+            android:weightSum="1.0" >
+
+        <Button
+                android:id="@+id/buttond2"
+                style="@style/ButtonText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.333"
+                android:background="@drawable/custombutton"
+                android:text="@string/d2_text"
+                android:textSize="30sp" />
+
+        <Button
+                android:id="@+id/buttond3"
+                style="@style/ButtonText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.333"
+                android:background="@drawable/custombutton"
+                android:text="@string/d3_text"
+                android:textSize="30sp" />
+
+        <Button
+                android:id="@+id/buttond4"
+                style="@style/ButtonText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.336"
+                android:background="@drawable/custombutton"
+                android:text="@string/d4_text"
+                android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/linearLayoutH3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".25"
+            android:orientation="horizontal"
+            android:weightSum="1.0" >
+
+        <Button
+                android:id="@+id/buttond6"
+                style="@style/ButtonText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight=".333"
+                android:background="@drawable/custombutton"
+                android:text="@string/d6_text"
+                android:textSize="30sp" />
+
+        <Button
+                android:id="@+id/buttond8"
+                style="@style/ButtonText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight=".333"
+                android:background="@drawable/custombutton"
+                android:text="@string/d8_text"
+                android:textSize="30sp" />
+
+        <Button
+                android:id="@+id/buttond10"
+                style="@style/ButtonText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight=".336"
+                android:background="@drawable/custombutton"
+                android:text="@string/d10_text"
+                android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/linearLayoutH4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".25"
+            android:orientation="horizontal"
+            android:weightSum="1.0" >
+
+        <Button
+                android:id="@+id/buttond12"
+                style="@style/ButtonText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight=".333"
+                android:background="@drawable/custombutton"
+                android:text="@string/d12_text"
+                android:textSize="30sp"/>
+
+        <Button
+                android:id="@+id/buttond20"
+                style="@style/ButtonText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight=".333"
+                android:background="@drawable/custombutton"
+                android:text="@string/d20_text"
+                android:textSize="30sp"/>
+
+        <Button
+                android:id="@+id/buttond24"
+                style="@style/ButtonText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight=".336"
+                android:background="@drawable/custombutton"
+                android:text="@string/d24_text"
+                android:textSize="30sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/linearLayoutH5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".25"
+            android:orientation="horizontal"
+            android:weightSum="1.0" >
+
+        <Button
+                android:id="@+id/buttond100"
+                style="@style/ButtonText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/custombutton"
+                android:text="@string/d100_text"
+                android:textSize="30sp"/>
+    </LinearLayout>
+
+</LinearLayout>

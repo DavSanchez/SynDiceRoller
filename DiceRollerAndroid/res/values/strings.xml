@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">DiceRollerAndroid</string>
+    <string name="d2_text">d2</string>
+    <string name="d3_text">d3</string>
+    <string name="d4_text">d4</string>
+    <string name="d6_text">d6</string>
+    <string name="d8_text">d8</string>
+    <string name="d10_text">d10</string>
+    <string name="d12_text">d12</string>
+    <string name="d20_text">d20</string>
+    <string name="d24_text">d24</string>
+    <string name="d100_text">d%</string>
 </resources>
