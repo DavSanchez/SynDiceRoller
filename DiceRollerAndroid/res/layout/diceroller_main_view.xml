@@ -157,6 +157,16 @@
                 android:background="@drawable/custombutton"
                 android:text="@string/d100_text"
                 android:textSize="30sp"/>
+
+        <Button
+                android:id="@+id/buttonListaTiradas"
+                style="@style/ButtonText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight=".75"
+                android:background="@drawable/custombuttonlista"
+                android:text="@string/ListaTiradas_text"
+                android:textSize="30sp"/>
     </LinearLayout>
 
 </LinearLayout>

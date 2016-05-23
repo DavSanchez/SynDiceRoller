@@ -11,4 +11,5 @@
     <string name="d20_text">d20</string>
     <string name="d24_text">d24</string>
     <string name="d100_text">d%</string>
+    <string name="ListaTiradas_text">Lista</string>
 </resources>
