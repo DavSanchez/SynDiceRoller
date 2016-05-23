@@ -4,8 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DiceRollerAndroid/DiceRollerAndroid.iml" filepath="$PROJECT_DIR$/DiceRollerAndroid/DiceRollerAndroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/SynDiceRoller.iml" filepath="$PROJECT_DIR$/.idea/modules/SynDiceRoller.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SynDiceRoller_main.iml" filepath="$PROJECT_DIR$/.idea/modules/SynDiceRoller_main.iml" group="SynDiceRoller" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SynDiceRoller_test.iml" filepath="$PROJECT_DIR$/.idea/modules/SynDiceRoller_test.iml" group="SynDiceRoller" />
     </modules>
   </component>
 </project>

@@ -25,38 +25,39 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight=".25"
-            android:orientation="horizontal"
-            android:weightSum="1.0" >
+            android:orientation="horizontal">
 
         <Button
                 android:id="@+id/buttond2"
                 style="@style/ButtonText"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
-                android:layout_weight="0.333"
                 android:background="@drawable/custombutton"
                 android:text="@string/d2_text"
-                android:textSize="30sp" />
+                android:layout_weight="1"
+                android:textSize="30sp"/>
 
         <Button
                 android:id="@+id/buttond3"
                 style="@style/ButtonText"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
-                android:layout_weight="0.333"
                 android:background="@drawable/custombutton"
                 android:text="@string/d3_text"
+                android:layout_weight="1"
                 android:textSize="30sp" />
 
         <Button
                 android:id="@+id/buttond4"
                 style="@style/ButtonText"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
-                android:layout_weight="0.336"
+                android:layout_weight="1"
                 android:background="@drawable/custombutton"
                 android:text="@string/d4_text"
                 android:textSize="30sp" />
+
+
 
     </LinearLayout>
 
