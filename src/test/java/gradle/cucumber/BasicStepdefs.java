@@ -15,7 +15,7 @@ public class BasicStepdefs {
         throw new PendingException();
     }
 
-    @When("^pulso botón de dado$")
+    @When("^Pulso botón de dado$")
     public void pulso_botón_de_dado() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
@@ -27,7 +27,7 @@ public class BasicStepdefs {
         throw new PendingException();
     }
 
-    @When("^pulso el botón de lista$")
+    @When("^Pulso el botón de lista$")
     public void pulso_el_botón_de_lista() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
@@ -45,7 +45,7 @@ public class BasicStepdefs {
         throw new PendingException();
     }
 
-    @When("^pulso un botón de la lista de tiradas$")
+    @When("^Pulso un botón de la lista de tiradas$")
     public void pulso_un_botón_de_la_lista_de_tiradas() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
@@ -57,7 +57,7 @@ public class BasicStepdefs {
         throw new PendingException();
     }
 
-    @When("^pulso el boton de añadir elemento$")
+    @When("^Pulso el boton de añadir elemento$")
     public void pulso_el_boton_de_añadir_elemento() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
@@ -69,7 +69,7 @@ public class BasicStepdefs {
         throw new PendingException();
     }
 
-    @When("^pulso el boton de editar elemento$")
+    @When("^Pulso el boton de editar elemento$")
     public void pulso_el_boton_de_editar_elemento() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
