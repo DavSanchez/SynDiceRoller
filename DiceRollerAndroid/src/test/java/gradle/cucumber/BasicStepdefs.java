@@ -5,10 +5,10 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import main.java.gradle.cucumber.Pantalla;
-
 import static org.junit.Assert.assertEquals;
 
 public class BasicStepdefs {
+
     private Pantalla obj;
     private String resultado;
 
@@ -31,6 +31,7 @@ public class BasicStepdefs {
     public void me_contesta_con(String arg1) throws Throwable {
         assertEquals(arg1, resultado);
     }
+
 
 
 }
