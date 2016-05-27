@@ -6,4 +6,6 @@ package es.ulpgc.eite.alu.diceroller.android.screen.presenter;
 public interface I_DiceRollerPresenter {
 
     void dicePressed(int carasDado);
+
+    void botonListaPressed();
 }
