@@ -11,11 +11,10 @@
             android:layout_weight="5"
             android:orientation="vertical"
             android:weightSum="1" >
-        <EditText
-                android:id="@+id/display"
+        <TextView
+                android:id="@+id/numberRolled"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:editable="false"
                 android:layout_weight="1"
                 android:gravity="center_vertical|right"/>
     </LinearLayout>
