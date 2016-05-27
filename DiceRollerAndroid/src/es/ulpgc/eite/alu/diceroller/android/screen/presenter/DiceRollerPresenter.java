@@ -19,17 +19,30 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
         return (I_DiceRollerModel) getScreenModel();
     }
 
-    @Override
-    public void buttonClicked(){
-        debug("buttonClicked");
-        // FALTAN COSAS!!!!
+    private I_DiceRollerPresenter _presenter;
+
+    private void setDiceRoller(I_DiceRollerPresenter presenter) {
+        _presenter = presenter;
     }
+
+    private I_DiceRollerPresenter getDiceRoller() {
+        return _presenter;
+    }
+
+    @Override
+    public void dicePressed(int caras){
+        getDiceRollerModel().roll(caras);
+
+    }
+
+
     @Override
     public void createScreen() {
         debug("createScreen");
-        getDiceRollerView().setLayout();
-        getDiceRollerView().setListener();
-        getDiceRollerView().setData(getDiceRollerModel().getData());
+
+        getDiceRollerView().initDiceRoller();
+     //   setDiceRoller(new DiceRollerPresenter(
+     //           getDiceRollerView(), getDiceRollerModel()));
     }
 
     @Override

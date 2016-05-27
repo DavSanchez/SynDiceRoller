@@ -1,16 +1,12 @@
 package es.ulpgc.eite.alu.diceroller.android.screen.view;
 
-import es.ulpgc.eite.alu.diceroller.android.screen.data.DiceRollerData;
-
 /**
  * Created by David on 12/4/16.
  */
 public interface I_DiceRollerView {
-    void setLayout();
+    int getDiceRollerLayout();
 
-    void roll();
+    void initDiceRoller();
 
-    void setData(DiceRollerData data);
-
-    void setListener();
+    void display(String text);
 }
