@@ -123,7 +123,6 @@ public class DiceRollerView extends AndroidScreenView implements I_DiceRollerVie
             case R.id.buttond100:
                 caras=100;
                 break;
-
         }
         return caras;
     }
@@ -131,7 +130,6 @@ public class DiceRollerView extends AndroidScreenView implements I_DiceRollerVie
     @Override
     public void display(String text) {
         debug("display", "text", text);
-
         TextView display = (TextView) findViewById(R.id.numberRolled);
         display.setText(text);
     }
