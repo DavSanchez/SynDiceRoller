@@ -20,12 +20,12 @@ public class DiceRollerModelTest {
 
     @Test
     public void roll() throws Exception {
-        for (int carasDado = 2; carasDado < 1000; carasDado++) {
+        for (int carasDado = 1; carasDado < 1000; carasDado++)
             for (int contador = 1; contador < 1000; contador++) {
-                int tirada = _lanzaDados.roll(carasDado);
+                _lanzaDados.roll(carasDado);
+                int tirada = _lanzaDados.getResultadoTirada();
                 assertTrue(tirada <= carasDado && tirada > 0);
             }
-        }
     }
 
 }
