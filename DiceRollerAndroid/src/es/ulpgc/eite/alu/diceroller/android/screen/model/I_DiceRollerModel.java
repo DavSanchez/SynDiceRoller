@@ -5,5 +5,9 @@ package es.ulpgc.eite.alu.diceroller.android.screen.model;
  */
 public interface I_DiceRollerModel {
 
-    int roll(int carasDado);
+    void roll(int carasDado);
+
+    int getResultadoTirada();
+
+    void setResultadoTirada(int resultadoTirada);
 }

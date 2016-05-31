@@ -8,11 +8,23 @@ import java.util.Random;
  * Created by David on 12/4/16.
  */
 public class DiceRollerModel extends AndroidScreenModel implements I_DiceRollerModel {
+    private int _resultadoTirada;
 
     @Override
-    public int roll(int carasDado) {
+    public void roll(int carasDado) {
         Random tirada = new Random();
         int resultado = tirada.nextInt(carasDado)+1;
-        return resultado;
+        setResultadoTirada(resultado);
     }
+
+    @Override
+    public int getResultadoTirada() {
+        return _resultadoTirada;
+    }
+
+    @Override
+    public void setResultadoTirada(int resultadoTirada) {
+        _resultadoTirada = resultadoTirada;
+    }
+
 }

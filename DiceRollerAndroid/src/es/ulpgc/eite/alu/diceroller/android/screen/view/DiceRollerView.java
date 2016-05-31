@@ -127,11 +127,23 @@ public class DiceRollerView extends AndroidScreenView implements I_DiceRollerVie
         return caras;
     }
 
-    @Override
+/*    @Override
     public void display(String text) {
         debug("display", "text", text);
         TextView display = (TextView) findViewById(R.id.numberRolled);
         display.setText(text);
+    }*/
+
+    // METODO CON INT PARA PROBAR, SI VUELVES ATRÁS SIN REVERTIR LA RAMA
+    // CAMBIA TAMBIEN LA INTERFAZ PARA QUE IMPLEMENTE EL ANTIGUO EN LUGAR DEL NUEVO!!!
+
+    @Override
+    public void display(int numero) {
+        debug ("display", "numero", numero);
+        Integer numeroInt = numero;
+        String numeroString = numeroInt.toString();
+        TextView display = (TextView) findViewById(R.id.numberRolled);
+        display.setText(numeroString);
     }
 
 }
