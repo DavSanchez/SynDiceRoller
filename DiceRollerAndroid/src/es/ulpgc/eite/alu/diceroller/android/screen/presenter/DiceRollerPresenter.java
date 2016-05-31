@@ -12,26 +12,16 @@ import es.ulpgc.eite.framework.core.screen.I_ScreenView;
  */
 public class DiceRollerPresenter extends AndroidScreenPresenter implements I_DiceRollerPresenter {
 
-    private I_DiceRollerView getDiceRollerView(){
-        return (I_DiceRollerView) getScreenView();
-    }
-
-    private I_DiceRollerModel getDiceRollerModel(){
-        return (I_DiceRollerModel) getScreenModel();
-    }
-
     private I_DiceRollerPresenter _presenter;
     private String _display;
 
-    private void setDiceRoller (I_DiceRollerPresenter presenter) {
+    private I_DiceRollerView getDiceRollerView(){ return (I_DiceRollerView) getScreenView(); }
 
-        _presenter = presenter;
-    }
+    private I_DiceRollerModel getDiceRollerModel(){ return (I_DiceRollerModel) getScreenModel(); }
 
-    private I_DiceRollerPresenter getDiceRoller() {
+    private void setDiceRoller (I_DiceRollerPresenter presenter) { _presenter = presenter; }
 
-        return _presenter;
-    }
+    private I_DiceRollerPresenter getDiceRoller() { return _presenter; }
 
     @Override
     public void dicePressed(int caras){
@@ -40,9 +30,7 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
     }
 
     @Override
-    public void botonListaPressed(){
-
-    }
+    public void botonListaPressed(){ }
 
 
     @Override
@@ -61,6 +49,8 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
 
     @Override
     public void resumeScreen() {
+        debug("resumeScreen");
+        getDiceRollerView().display(getDiceRollerModel().getResultadoTirada());
 
     }
 
@@ -98,7 +88,14 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
 
     @Override
     public I_ScreenState getNextState(Class<? extends I_ScreenView> view, int code) {
-        return null;
+        debug("getNextState", "view", view.getSimpleName());
+        debug("getNextState", "code", code);
+
+        //debug("getNextState", "data", data);
+
+        return new DiceRollerState(_display);
+
+        //return getScreenState();
     }
 
     @Override

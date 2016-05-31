@@ -12,6 +12,10 @@ public class DiceRollerState implements I_ScreenState {
         setDisplay("0");
     }
 
+    public DiceRollerState(String display) {
+        setDisplay(display);
+    }
+
     public String getDisplay() {
         return _display;
     }
