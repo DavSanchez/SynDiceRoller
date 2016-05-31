@@ -8,7 +8,5 @@ public interface I_DiceRollerView {
 
     void initDiceRoller();
 
-    // void display(String text);
-
     void display(int numero);
 }
