@@ -124,8 +124,6 @@ public class DiceRollerView extends AndroidScreenView implements I_DiceRollerVie
     @Override
     public void display(String numeroPantalla) {
         debug ("display", "numeroPantalla", numeroPantalla);
-        //Integer numeroInt = numero;
-        //String numeroString = numeroInt.toString();
         TextView display = (TextView) findViewById(R.id.numberRolled);
         display.setText(numeroPantalla);
     }
