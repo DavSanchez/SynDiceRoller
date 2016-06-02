@@ -1,4 +1,4 @@
-package es.ulpgc.eite.alu.diceroller.android.screen.presenter;
+package es.ulpgc.eite.alu.diceroller.android.main_screen.presenter;
 
 /**
  * Created by David on 12/4/16.

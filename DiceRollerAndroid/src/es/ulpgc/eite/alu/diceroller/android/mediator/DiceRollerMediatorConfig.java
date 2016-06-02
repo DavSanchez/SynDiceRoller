@@ -1,8 +1,8 @@
 package es.ulpgc.eite.alu.diceroller.android.mediator;
 
-import es.ulpgc.eite.alu.diceroller.android.screen.model.DiceRollerModel;
-import es.ulpgc.eite.alu.diceroller.android.screen.presenter.DiceRollerPresenter;
-import es.ulpgc.eite.alu.diceroller.android.screen.view.DiceRollerView;
+import es.ulpgc.eite.alu.diceroller.android.main_screen.model.DiceRollerModel;
+import es.ulpgc.eite.alu.diceroller.android.main_screen.presenter.DiceRollerPresenter;
+import es.ulpgc.eite.alu.diceroller.android.main_screen.view.DiceRollerView;
 import es.ulpgc.eite.framework.core.mediator.I_MediatorSingleton;
 import es.ulpgc.eite.framework.core.mediator.MediatorConfig;
 import es.ulpgc.eite.framework.core.mediator.MediatorScreen;

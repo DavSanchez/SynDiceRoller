@@ -1,9 +1,9 @@
-package es.ulpgc.eite.alu.diceroller.android.screen.view;
+package es.ulpgc.eite.alu.diceroller.android.main_screen.view;
 
 import android.view.View;
 import android.widget.TextView;
 import es.ulpgc.eite.alu.diceroller.android.R;
-import es.ulpgc.eite.alu.diceroller.android.screen.presenter.I_DiceRollerPresenter;
+import es.ulpgc.eite.alu.diceroller.android.main_screen.presenter.I_DiceRollerPresenter;
 import es.ulpgc.eite.framework.android.AndroidScreenView;
 
 /**

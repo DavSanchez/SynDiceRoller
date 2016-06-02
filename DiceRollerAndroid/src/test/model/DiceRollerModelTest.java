@@ -1,7 +1,7 @@
 package test.model;
 
-import es.ulpgc.eite.alu.diceroller.android.screen.model.DiceRollerModel;
-import es.ulpgc.eite.alu.diceroller.android.screen.model.I_DiceRollerModel;
+import es.ulpgc.eite.alu.diceroller.android.main_screen.model.DiceRollerModel;
+import es.ulpgc.eite.alu.diceroller.android.main_screen.model.I_DiceRollerModel;
 import org.junit.Before;
 import org.junit.Test;
 

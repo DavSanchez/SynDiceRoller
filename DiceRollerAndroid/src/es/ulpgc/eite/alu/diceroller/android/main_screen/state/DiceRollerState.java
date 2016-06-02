@@ -1,4 +1,4 @@
-package es.ulpgc.eite.alu.diceroller.android.state;
+package es.ulpgc.eite.alu.diceroller.android.main_screen.state;
 
 import es.ulpgc.eite.framework.core.screen.I_ScreenState;
 
@@ -9,7 +9,7 @@ public class DiceRollerState implements I_ScreenState {
     private String _display;
 
     public DiceRollerState() {
-        setDisplay("0");
+        setDisplay("");
     }
 
     public DiceRollerState(String display) {

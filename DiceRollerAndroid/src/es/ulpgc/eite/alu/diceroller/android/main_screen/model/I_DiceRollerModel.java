@@ -1,4 +1,4 @@
-package es.ulpgc.eite.alu.diceroller.android.screen.model;
+package es.ulpgc.eite.alu.diceroller.android.main_screen.model;
 
 /**
  * Created by David on 12/4/16.

@@ -1,4 +1,4 @@
-package es.ulpgc.eite.alu.diceroller.android.screen.model;
+package es.ulpgc.eite.alu.diceroller.android.main_screen.model;
 
 import es.ulpgc.eite.framework.android.AndroidScreenModel;
 
