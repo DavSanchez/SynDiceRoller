@@ -18,7 +18,7 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
 
     private I_DiceRollerModel getDiceRollerModel(){ return (I_DiceRollerModel) getScreenModel(); }
 
-    // REVISAR ESTAS TRES LÍNEAS POR SI CÓDIGO MUERTO.
+    // REVISAR ESTAS TRES LÍNEAS POR SI CÓDIGO MUERTO. TODO
 
     private I_DiceRollerPresenter _presenter;
 
@@ -43,6 +43,7 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
 
         getDiceRollerView().initDiceRoller();
 
+        // LIMPIAR. TODO
         //   setDiceRoller(new DiceRollerPresenter(
         //           getDiceRollerView(), getDiceRollerModel()));
     }
@@ -96,10 +97,10 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
         debug("getNextState", "view", view.getSimpleName());
         debug("getNextState", "code", code);
 
-        //debug("getNextState", "data", data);
-
         return new DiceRollerState(_display);
 
+        //LIMPIAR. TODO
+        //debug("getNextState", "data", data);
         //return getScreenState();
     }
 

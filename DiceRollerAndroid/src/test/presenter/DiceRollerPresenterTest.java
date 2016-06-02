@@ -9,6 +9,9 @@ import static org.junit.Assert.*;
  * Created by David on 28/5/16.
  */
 public class DiceRollerPresenterTest {
+
+    // HACER. TODO
+
     @Before
     public void setUp() throws Exception {
 
