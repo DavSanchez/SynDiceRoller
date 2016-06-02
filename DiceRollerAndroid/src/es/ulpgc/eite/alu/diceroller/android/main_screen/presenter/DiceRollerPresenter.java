@@ -12,12 +12,15 @@ import es.ulpgc.eite.framework.core.screen.I_ScreenView;
  */
 public class DiceRollerPresenter extends AndroidScreenPresenter implements I_DiceRollerPresenter {
 
-    private I_DiceRollerPresenter _presenter;
     private String _display;
 
     private I_DiceRollerView getDiceRollerView(){ return (I_DiceRollerView) getScreenView(); }
 
     private I_DiceRollerModel getDiceRollerModel(){ return (I_DiceRollerModel) getScreenModel(); }
+
+    // REVISAR ESTAS TRES LÍNEAS POR SI CÓDIGO MUERTO.
+
+    private I_DiceRollerPresenter _presenter;
 
     private void setDiceRoller (I_DiceRollerPresenter presenter) { _presenter = presenter; }
 
@@ -39,6 +42,7 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
         debug("createScreen");
 
         getDiceRollerView().initDiceRoller();
+
         //   setDiceRoller(new DiceRollerPresenter(
         //           getDiceRollerView(), getDiceRollerModel()));
     }
