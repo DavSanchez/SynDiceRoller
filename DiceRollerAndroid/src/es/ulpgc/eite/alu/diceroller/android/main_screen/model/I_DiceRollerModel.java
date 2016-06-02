@@ -7,7 +7,13 @@ public interface I_DiceRollerModel {
 
     void roll(int carasDado);
 
+    void numberToString(Integer numero);
+
     int getResultadoTirada();
 
     void setResultadoTirada(int resultadoTirada);
+
+    String getResultadoTiradaString();
+
+    void setResultadoTiradaString(String resultadoTiradaString);
 }

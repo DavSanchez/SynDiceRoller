@@ -26,7 +26,8 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
     @Override
     public void dicePressed(int caras){
         getDiceRollerModel().roll(caras);
-        getDiceRollerView().display(getDiceRollerModel().getResultadoTirada());
+        getDiceRollerModel().numberToString(getDiceRollerModel().getResultadoTirada());
+        getDiceRollerView().display(getDiceRollerModel().getResultadoTiradaString());
     }
 
     @Override
@@ -50,7 +51,7 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
     @Override
     public void resumeScreen() {
         debug("resumeScreen");
-        getDiceRollerView().display(getDiceRollerModel().getResultadoTirada());
+        getDiceRollerView().display(getDiceRollerModel().getResultadoTiradaString());
 
     }
 
