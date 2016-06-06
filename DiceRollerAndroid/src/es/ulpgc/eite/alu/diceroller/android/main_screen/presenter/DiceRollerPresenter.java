@@ -13,6 +13,7 @@ import es.ulpgc.eite.framework.core.screen.I_ScreenView;
 public class DiceRollerPresenter extends AndroidScreenPresenter implements I_DiceRollerPresenter {
 
     private String _display;
+    private String _resultadoTiradaString;
 
     private I_DiceRollerView getDiceRollerView(){ return (I_DiceRollerView) getScreenView(); }
 
@@ -29,12 +30,29 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
     @Override
     public void dicePressed(int caras){
         getDiceRollerModel().roll(caras);
-        getDiceRollerModel().numberToString(getDiceRollerModel().getResultadoTirada());
-        getDiceRollerView().display(getDiceRollerModel().getResultadoTiradaString());
+        numberToString(getDiceRollerModel().getResultadoTirada());
+        getDiceRollerView().display(getResultadoTiradaString());
     }
 
     @Override
     public void botonListaPressed(){ }
+
+
+    @Override
+    public void numberToString(Integer numero){
+        String numeroString = numero.toString();
+        setResultadoTiradaString(numeroString);
+    }
+
+    @Override
+    public String getResultadoTiradaString() {
+        return _resultadoTiradaString;
+    }
+
+    @Override
+    public void setResultadoTiradaString(String resultadoTiradaString) {
+        _resultadoTiradaString = resultadoTiradaString;
+    }
 
 
     @Override
@@ -56,13 +74,13 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
     @Override
     public void resumeScreen() {
         debug("resumeScreen");
-        getDiceRollerView().display(getDiceRollerModel().getResultadoTiradaString());
+        getDiceRollerView().display(getResultadoTiradaString());
 
     }
 
     @Override
     public void pauseScreen() {
-        debug("pauseScren");
+        debug("pauseScreen");
     }
 
     @Override

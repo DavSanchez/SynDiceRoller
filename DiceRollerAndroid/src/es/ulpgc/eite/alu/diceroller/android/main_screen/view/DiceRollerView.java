@@ -85,6 +85,15 @@ public class DiceRollerView extends AndroidScreenView implements I_DiceRollerVie
     }
 
     private int getNumeroCaras(View btn) {
+/*        String tag = (String) btn.getTag();
+        debug("getNumeroCaras", "tag", tag);
+
+        tag = tag.replace("d", "");
+        tag = tag.replace("%", "100");
+
+        int _caras = Integer.parseInt(tag);
+        debug("getNumeroCaras", "caras", _caras);*/
+
         int caras = btn.getId();
         switch (caras) {
             case R.id.buttond2:
@@ -118,6 +127,8 @@ public class DiceRollerView extends AndroidScreenView implements I_DiceRollerVie
                 caras=100;
                 break;
         }
+
+
         return caras;
     }
 
