@@ -12,4 +12,6 @@
     <string name="d24_text">d24</string>
     <string name="d100_text">d%</string>
     <string name="ListaTiradas_text">Lista</string>
+    <string name="data_label">Data label</string>
+    <string name="detail_button">Remove</string>
 </resources>

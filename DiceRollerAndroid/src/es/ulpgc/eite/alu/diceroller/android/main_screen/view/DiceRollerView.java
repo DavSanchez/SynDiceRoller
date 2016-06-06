@@ -127,8 +127,6 @@ public class DiceRollerView extends AndroidScreenView implements I_DiceRollerVie
                 caras=100;
                 break;
         }
-
-
         return caras;
     }
 
