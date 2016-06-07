@@ -29,7 +29,7 @@ public class MasterPresenter extends AndroidScreenPresenter implements I_MasterP
         debug("setListPosition", "position", position);
         debug("setListPosition", "data", getMasterModel().getData());
 
-        startNextScreenWithFinish(DiceRollerMediatorCode.CLICK, false);
+        startNextScreenWithFinish(DiceRollerMediatorCode.CLICK_MASTERDETAIL, false);
 
     }
 
