@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import es.ulpgc.eite.alu.diceroller.android.R;
-import es.ulpgc.eite.alu.diceroller.android.data.DetailData;
+import es.ulpgc.eite.alu.diceroller.android.detail.data.DetailData;
 import es.ulpgc.eite.alu.diceroller.android.master.presenter.I_MasterPresenter;
 import es.ulpgc.eite.framework.android.AndroidScreenView;
 
@@ -22,20 +22,6 @@ public class MasterView extends AndroidScreenView implements I_MasterView {
 
     private ListView _list;
     private MasterAdapter _adapter;
-    private int _position;
-
-    @Override
-    public int getListPosition(){
-        return getPosition();
-    }
-
-    private int getPosition() {
-        return _position;
-    }
-
-    private void setPosition(int position) {
-        _position = position;
-    }
 
     private ListView getList() {
         return _list;
@@ -57,8 +43,19 @@ public class MasterView extends AndroidScreenView implements I_MasterView {
         return (I_MasterPresenter) getScreenPresenter();
     }
 
+
     @Override
-    public void setMasterLayout(){
+    public void setMasterScreen() {
+        setMasterLayout();
+        setMasterList();
+        setMasterAdapter();
+        setMasterListAdapter();
+        setMasterListListener();
+    }
+
+    private void setMasterLayout(){
+        debug("setMasterLayout");
+
         setContentView(getListLayout());
     }
 
@@ -76,6 +73,8 @@ public class MasterView extends AndroidScreenView implements I_MasterView {
 
     @Override
     public void setMasterCollection(List<DetailData> collection){
+        debug("setMasterCollection", "collection", collection);
+
         getAdapter().clear();
         getAdapter().addAll(collection);
         getAdapter().notifyDataSetChanged();
@@ -83,44 +82,39 @@ public class MasterView extends AndroidScreenView implements I_MasterView {
 
     @Override
     public void setListPosition(int position){
-        setPosition(position);
+        debug("setListPosition", "position", position);
+
         getList().setSelection(position);
     }
 
-//    @Override
-//    public void setListPosition(){
-//        getList().setSelection(getPosition());
-//    }
+    private void setMasterList(){
+        debug("setMasterList");
 
-    @Override
-    public void setMasterList(){
         setList((ListView) findViewById(getListView()));
     }
 
-    @Override
-    public void setMasterAdapter(){
+    private void setMasterAdapter(){
+        debug("setMasterAdapter");
+
         setAdapter(new MasterAdapter(this, getRowLayout()));
     }
 
-    @Override
-    public void setMasterListAdapter(){
+    private void setMasterListAdapter(){
+        debug("setMasterListAdapter");
+
         getList().setAdapter(getAdapter());
     }
 
-    @Override
-    public void setMasterListListener(){
+    private void setMasterListListener(){
+        debug("setMasterListListener");
+
         getList().setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //setPosition(position);
-                itemListClicked(position);
+
+                getMasterPresenter().setListPosition(position);
             }
         });
-    }
-
-    private void itemListClicked(int position) {
-        setPosition(position);
-        getMasterPresenter().itemListClicked();
     }
 
     private class MasterAdapter extends ArrayAdapter<DetailData> {
@@ -159,7 +153,7 @@ public class MasterView extends AndroidScreenView implements I_MasterView {
 
             DetailData data = getItem(position);
             TextView titleView = (TextView) rowView.findViewById(R.id.lbl_title);
-            titleView.setText(data.toString());
+            titleView.setText(data.getLabel());
 
             return rowView;
         }

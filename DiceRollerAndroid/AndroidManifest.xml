@@ -21,6 +21,8 @@
 
         <!-- MASTER-DETAIL -->
         <activity android:name=".master.view.MasterView"/>
+        <activity android:name=".detail.view.DetailView"/>
+
 
     </application>
 </manifest>

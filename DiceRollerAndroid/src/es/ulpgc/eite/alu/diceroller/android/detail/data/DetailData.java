@@ -1,4 +1,4 @@
-package es.ulpgc.eite.alu.diceroller.android.data;
+package es.ulpgc.eite.alu.diceroller.android.detail.data;
 
 import org.droidpersistence.annotation.Column;
 import org.droidpersistence.annotation.PrimaryKey;

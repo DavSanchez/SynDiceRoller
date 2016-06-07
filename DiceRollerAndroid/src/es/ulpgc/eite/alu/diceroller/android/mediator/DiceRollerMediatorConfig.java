@@ -1,6 +1,9 @@
 package es.ulpgc.eite.alu.diceroller.android.mediator;
 
 import es.ulpgc.eite.alu.diceroller.android.database.DatabaseMasterDetail;
+import es.ulpgc.eite.alu.diceroller.android.detail.model.DetailModel;
+import es.ulpgc.eite.alu.diceroller.android.detail.presenter.DetailPresenter;
+import es.ulpgc.eite.alu.diceroller.android.detail.view.DetailView;
 import es.ulpgc.eite.alu.diceroller.android.main_screen.model.DiceRollerModel;
 import es.ulpgc.eite.alu.diceroller.android.main_screen.presenter.DiceRollerPresenter;
 import es.ulpgc.eite.alu.diceroller.android.main_screen.view.DiceRollerView;
@@ -35,7 +38,7 @@ public class DiceRollerMediatorConfig extends MediatorConfig {
         getTransitions().add(new MediatorTransition(DiceRollerView.class, null, DiceRollerMediatorCode.CLICK));
 
         // MASTER-DETAIL. CHECK DiceRollerMediatorCode.CLICK...
-        getTransitions().add(new MediatorTransition(MasterView.class, null, DiceRollerMediatorCode.CLICK));
+        getTransitions().add(new MediatorTransition(MasterView.class, DetailView.class, DiceRollerMediatorCode.CLICK));
     }
 
     private void setDiceRollerScreenCollection() {
@@ -44,6 +47,9 @@ public class DiceRollerMediatorConfig extends MediatorConfig {
         // MASTER-DETAIL. CHECK DatabaseMasterDetail.class...
         getScreens().add(new MediatorScreen(MasterView.class,
                 MasterPresenter.class, MasterModel.class, DatabaseMasterDetail.class));
+
+        getScreens().add(new MediatorScreen(DetailView.class,
+                DetailPresenter.class, DetailModel.class, DatabaseMasterDetail.class));
         
     }
 }

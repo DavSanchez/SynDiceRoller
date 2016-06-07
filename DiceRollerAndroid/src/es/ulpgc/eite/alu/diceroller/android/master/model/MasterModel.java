@@ -1,7 +1,6 @@
 package es.ulpgc.eite.alu.diceroller.android.master.model;
 
-import es.ulpgc.eite.alu.diceroller.android.data.DetailData;
-import es.ulpgc.eite.alu.diceroller.android.database.I_MasterDatabase;
+import es.ulpgc.eite.alu.diceroller.android.detail.data.DetailData;
 import es.ulpgc.eite.alu.diceroller.android.master.presenter.I_MasterPresenter;
 import es.ulpgc.eite.framework.android.AndroidScreenModel;
 
@@ -50,6 +49,7 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel {
         }
     }
 
+    @Override
     public DetailData getData(){
         return getMasterDetailDatabase().getDataList().get(getPosition());
     }
