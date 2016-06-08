@@ -47,7 +47,6 @@ public class DiceRollerMediatorConfig extends MediatorConfig {
     private void setDiceRollerScreenCollection() {
         getScreens().add(new MediatorScreen(DiceRollerView.class, DiceRollerPresenter.class, DiceRollerModel.class));
 
-        // MASTER-DETAIL. CHECK DatabaseMasterDetail.class...
         getScreens().add(new MediatorScreen(MasterView.class,
                 MasterPresenter.class, MasterModel.class, DatabaseMasterDetail.class));
 
