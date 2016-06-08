@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="horizontal"
-              android:background="@drawable/custom_button_white"
+              android:background="@drawable/custombutton"
               android:layout_width="match_parent"
               android:layout_height="wrap_content">
 
@@ -16,6 +16,7 @@
 
 
         <TextView android:id="@+id/lbl_title"
+                  style="@style/ButtonText"
                   android:text="@string/data_label"
                   android:textSize="@dimen/lbl_title"
                   android:layout_width="match_parent"
