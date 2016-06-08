@@ -29,10 +29,7 @@ public class DetailPresenter
     public void deleteData() {
         debug("deleteData");
 
-        //DetailState state = new DetailState(getDetailModel().getData());
-        //notifyScreenObservers(this, MasterDetailMediatorCode.DELETE, state);
         notifyScreenObservers(this, DiceRollerMediatorCode.DELETE, null);
-        //finishScreen();
     }
 
 

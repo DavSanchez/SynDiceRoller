@@ -14,4 +14,5 @@
     <string name="ListaTiradas_text">Lista</string>
     <string name="data_label">Data label</string>
     <string name="detail_button">Remove</string>
+    <string name="detail_roll_button">Roll</string>
 </resources>
