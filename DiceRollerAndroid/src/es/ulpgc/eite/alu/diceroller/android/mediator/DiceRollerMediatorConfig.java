@@ -39,7 +39,7 @@ public class DiceRollerMediatorConfig extends MediatorConfig {
 
         // MASTER-DETAIL. CHECK DiceRollerMediatorCode.CLICK...
         getTransitions().add(new MediatorTransition(MasterView.class,
-                DetailView.class, DiceRollerMediatorCode.CLICK_MASTERDETAIL));
+                DetailView.class, DiceRollerMediatorCode.SELECT));
     }
 
     private void setDiceRollerScreenCollection() {

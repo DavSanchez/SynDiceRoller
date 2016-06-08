@@ -4,14 +4,16 @@ import es.ulpgc.eite.alu.diceroller.android.detail.data.DetailData;
 import es.ulpgc.eite.alu.diceroller.android.detail.model.I_DetailModel;
 import es.ulpgc.eite.alu.diceroller.android.detail.state.DetailState;
 import es.ulpgc.eite.alu.diceroller.android.detail.view.I_DetailView;
+import es.ulpgc.eite.alu.diceroller.android.mediator.DiceRollerMediatorCode;
 import es.ulpgc.eite.framework.android.AndroidScreenPresenter;
+import es.ulpgc.eite.framework.core.screen.I_ScreenObservable;
 import es.ulpgc.eite.framework.core.screen.I_ScreenState;
 import es.ulpgc.eite.framework.core.screen.I_ScreenView;
 
 /**
  * Created by David on 7/6/16.
  */
-public class DetailPresenter extends AndroidScreenPresenter implements I_DetailPresenter {
+public class DetailPresenter extends AndroidScreenPresenter implements I_DetailPresenter, I_ScreenObservable {
 
     private I_DetailModel getDetailModel(){
         return (I_DetailModel) getScreenModel();
@@ -22,16 +24,29 @@ public class DetailPresenter extends AndroidScreenPresenter implements I_DetailP
     }
 
     @Override
+    public void deleteData() {
+        debug("deleteData");
+        //DetailState state = new DetailState(getDetailModel().getData());
+        //notifyScreenObservers(this, DiceRollerMediatorCode.DELETE, state);
+        notifyScreenObservers(this, DiceRollerMediatorCode.DELETE, null);
+        //finishScreen();
+    }
+
+    @Override
     public void createScreen() {
         debug("createScreen");
 
         getDetailView().setDetailLayout();
+        getDetailView().setDetailBtnListener();
         getDetailModel().setData(new DetailData());
 
     }
 
     @Override
     public void backScreen() {
+        debug("backScreen");
+        notifyScreenObservers(this, DiceRollerMediatorCode.BACK, null);
+
 
     }
 
@@ -78,5 +93,13 @@ public class DetailPresenter extends AndroidScreenPresenter implements I_DetailP
         debug("getNextState", "view", view.getSimpleName());
         debug("getNextState", "code", code);
         return null;
+    }
+
+    @Override
+    public void updateObservableState(Class<? extends I_ScreenView> view, int code, I_ScreenState state) {
+        debug("updateObservableState", "view", view.getSimpleName());
+        debug("updateObservableState", "code", code);
+
+        finishScreen();
     }
 }

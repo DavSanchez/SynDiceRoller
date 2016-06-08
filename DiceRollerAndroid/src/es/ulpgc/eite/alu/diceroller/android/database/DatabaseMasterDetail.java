@@ -4,9 +4,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.SystemClock;
 import es.ulpgc.eite.framework.android.AndroidScreenDatabase;
 import es.ulpgc.eite.framework.android.I_AndroidMediatorSingleton;
-import es.ulpgc.eite.masterdetail.android.R;
-import es.ulpgc.eite.masterdetail.android.detail.data.DetailData;
-import es.ulpgc.eite.masterdetail.android.master.data.MasterData;
+import es.ulpgc.eite.alu.diceroller.android.R;
+import es.ulpgc.eite.alu.diceroller.android.detail.data.DetailData;
+import es.ulpgc.eite.alu.diceroller.android.master.data.MasterData;
 
 import java.util.List;
 

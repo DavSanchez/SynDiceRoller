@@ -53,4 +53,11 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel {
     public DetailData getData(){
         return getMasterDetailDatabase().getDataList().get(getPosition());
     }
+
+
+    @Override
+    public void removeData(){
+getMasterDetailDatabase().deleteData(getData().getId());
+        debug("removeData", "collection", getCollection());
+    }
 }

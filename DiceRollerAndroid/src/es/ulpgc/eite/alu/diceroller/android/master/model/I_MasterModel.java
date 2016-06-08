@@ -15,4 +15,6 @@ public interface I_MasterModel {
     List<DetailData> getCollection();
 
     DetailData getData();
+
+    void removeData();
 }
