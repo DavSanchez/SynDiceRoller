@@ -3,14 +3,17 @@ package es.ulpgc.eite.alu.diceroller.android.main_screen.presenter;
 import es.ulpgc.eite.alu.diceroller.android.main_screen.model.I_DiceRollerModel;
 import es.ulpgc.eite.alu.diceroller.android.main_screen.view.I_DiceRollerView;
 import es.ulpgc.eite.alu.diceroller.android.main_screen.state.DiceRollerState;
+import es.ulpgc.eite.alu.diceroller.android.master.presenter.MasterPresenter;
+import es.ulpgc.eite.alu.diceroller.android.mediator.DiceRollerMediatorCode;
 import es.ulpgc.eite.framework.android.AndroidScreenPresenter;
+import es.ulpgc.eite.framework.core.screen.I_ScreenObserver;
 import es.ulpgc.eite.framework.core.screen.I_ScreenState;
 import es.ulpgc.eite.framework.core.screen.I_ScreenView;
 
 /**
  * Created by David on 12/4/16.
  */
-public class DiceRollerPresenter extends AndroidScreenPresenter implements I_DiceRollerPresenter {
+public class DiceRollerPresenter extends AndroidScreenPresenter implements I_DiceRollerPresenter, I_ScreenObserver {
 
     private String _display;
     private String _resultadoTiradaString;
@@ -35,7 +38,9 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
     }
 
     @Override
-    public void botonListaPressed(){ }
+    public void botonListaPressed(){
+        startNextScreenWithObserver(this, DiceRollerMediatorCode.LISTA);
+    }
 
 
     @Override
@@ -130,5 +135,10 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
     @Override
     public void setDisplay(String display) {
         _display = display;
+    }
+
+    @Override
+    public I_ScreenState updateObserverState(Class<? extends I_ScreenView> view, int code, I_ScreenState state) {
+        return null;
     }
 }

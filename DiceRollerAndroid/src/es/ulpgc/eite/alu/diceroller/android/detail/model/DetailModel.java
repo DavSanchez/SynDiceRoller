@@ -1,13 +1,10 @@
 package es.ulpgc.eite.alu.diceroller.android.detail.model;
 
+import es.ulpgc.eite.framework.android.AndroidScreenModel;
 import es.ulpgc.eite.alu.diceroller.android.detail.data.DetailData;
 import es.ulpgc.eite.alu.diceroller.android.detail.presenter.I_DetailPresenter;
-import es.ulpgc.eite.framework.android.AndroidScreenModel;
 
-/**
- * Created by David on 7/6/16.
- */
-public class DetailModel extends AndroidScreenModel implements I_DetailModel {
+public class DetailModel extends AndroidScreenModel implements I_DetailModel{
 
     private DetailData _data;
 

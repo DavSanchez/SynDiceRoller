@@ -2,10 +2,8 @@ package es.ulpgc.eite.alu.diceroller.android.master.state;
 
 import es.ulpgc.eite.framework.core.screen.I_ScreenState;
 
-/**
- * Created by David on 6/6/16.
- */
 public class MasterState implements I_ScreenState {
+
     private int position;
 
     public MasterState() {
@@ -19,7 +17,6 @@ public class MasterState implements I_ScreenState {
     public int getPosition() {
         return position;
     }
-
 
     public void setPosition(int pos) {
         position = pos;

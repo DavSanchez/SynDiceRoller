@@ -6,22 +6,21 @@ import es.ulpgc.eite.framework.android.AndroidScreenDatabase;
 import es.ulpgc.eite.framework.android.I_AndroidMediatorSingleton;
 import es.ulpgc.eite.alu.diceroller.android.R;
 import es.ulpgc.eite.alu.diceroller.android.detail.data.DetailData;
-import es.ulpgc.eite.alu.diceroller.android.master.data.MasterData;
 
 import java.util.List;
 
 
-public class DatabaseMasterDetail extends AndroidScreenDatabase
-        implements  I_MasterDatabase,  I_DetailDatabase {
+public class DatabaseMasterDetail 
+        extends AndroidScreenDatabase implements I_MasterDetailDatabase {
 
 
-    private final static int DB_VERSION = 11;
+    private final static int DB_VERSION = 10;
     public static final int DB_NAME = R.string.app_name;
 
     private DatabaseMasterDetailUtils dbUtils;
 	private SQLiteDatabase database;
 	private DetailDao detailDao;
-    private MasterDao masterDao;
+
 
 
     @Override
@@ -34,7 +33,6 @@ public class DatabaseMasterDetail extends AndroidScreenDatabase
         setDatabase(dbUtils.getWritableDatabase());
 
         detailDao = new DetailDao(new DetailTable(), database);
-        masterDao = new MasterDao(new MasterTable(), database);
     }
 
 
@@ -48,7 +46,7 @@ public class DatabaseMasterDetail extends AndroidScreenDatabase
             setDatabase(dbUtils.getWritableDatabase());
 		}
 	}
-
+	
 	private void closeDatabase() {
 		if (getDatabase().isOpen()) {
 			getDatabase().close();
@@ -71,34 +69,27 @@ public class DatabaseMasterDetail extends AndroidScreenDatabase
    		database = db;
    	}
 
-    private MasterDao getMasterDao() {
-   		return masterDao;
-   	}
 
-   	private void setMasterDao(MasterDao dao) {
-   		masterDao = dao;
-   	}
 
-   	private DetailDao getDetailDao() {
+   	private DetailDao getDataDao() {
    		return detailDao;
    	}
 
-   	private void setDetailDao(DetailDao dao) {
+   	private void setDataDao(DetailDao dao) {
    		detailDao = dao;
    	}
 
-    @Override
-	public MasterData getMasterData(Long dataId){
-		return getMasterDao().get(dataId);
-	}
+
 
     @Override
-	public DetailData getDetailData(Long dataId){
-		return getDetailDao().get(dataId);
+	public DetailData getData(Long dataId){
+		return getDataDao().get(dataId);
 	}
 
+
+
     @Override
-    public MasterData getMasterDataBy(DatabaseClauseArg[] args){
+    public DetailData getDataBy(DatabaseClauseArg[] args){
 
         String clause = " ";
         for (int index=0; index < args.length-1; index++) {
@@ -110,28 +101,12 @@ public class DatabaseMasterDetail extends AndroidScreenDatabase
         DatabaseClauseArg arg = args[args.length-1];
         clause += arg.key + " "  + arg.cond + " '" + arg.val +"'";
 
-        return getMasterDao().getByClause(clause, null);
-   	}
-
-    @Override
-    public DetailData getDetailDataBy(DatabaseClauseArg[] args){
-
-        String clause = " ";
-        for (int index=0; index < args.length-1; index++) {
-            DatabaseClauseArg arg = args[index];
-            clause += arg.key + " "  + arg.cond + " '" + arg.val + "'";
-            clause += " AND ";
-        }
-
-        DatabaseClauseArg arg = args[args.length-1];
-        clause += arg.key + " "  + arg.cond + " '" + arg.val +"'";
-
-        return getDetailDao().getByClause(clause, null);
+        return getDataDao().getByClause(clause, null);
    	}
 
 
     @Override
-    public List<MasterData> getMasterDataListBy(DatabaseClauseArg[] args){
+    public List<DetailData> getDataListBy(DatabaseClauseArg[] args){
 
         String clause = " ";
         for (int index=0; index < args.length-1; index++) {
@@ -143,43 +118,24 @@ public class DatabaseMasterDetail extends AndroidScreenDatabase
         DatabaseClauseArg arg = args[args.length-1];
         clause += arg.key + " "  + arg.cond + " '" + arg.val + "'";
 
-        return getMasterDao().getAllbyClause(clause, null, null, null, "id");
+        return getDataDao().getAllbyClause(clause,
+                null, null, null, "id");
    	}
 
     @Override
-    public List<DetailData> getDetailDataListBy(DatabaseClauseArg[] args){
+	public List<DetailData> getDataList(){
 
-        String clause = " ";
-        for (int index=0; index < args.length-1; index++) {
-            DatabaseClauseArg arg = args[index];
-            clause += arg.key + " "  + arg.cond + " '" + arg.val + "'";
-            clause += " AND ";
-        }
+        return getDataDao().getAllbyClause(null, null, null, null, "id");
+	}	
 
-        DatabaseClauseArg arg = args[args.length-1];
-        clause += arg.key + " "  + arg.cond + " '" + arg.val + "'";
 
-        return getDetailDao().getAllbyClause(clause, null, null, null, "id");
-   	}
-
+    
     @Override
-	public List<MasterData> getMasterDataList(){
-
-        return getMasterDao().getAllbyClause(null, null, null, null, "id");
-	}
-
-    @Override
-	public List<DetailData> getDetailDataList(){
-
-        return getDetailDao().getAllbyClause(null, null, null, null, "id");
-	}
-
-    @Override
-    public boolean deleteMasterDataList(){
-        int size = getMasterDataList().size();
+    public boolean deleteDataList(){
+        int size = getDataList().size();
    		getDatabase().beginTransaction();
         int result = getDatabase().delete(
-                getMasterDao().getTableName(), "1", null);
+                getDataDao().getTableName(), "1", null);
    		getDatabase().setTransactionSuccessful();
    		getDatabase().endTransaction();
 
@@ -191,34 +147,9 @@ public class DatabaseMasterDetail extends AndroidScreenDatabase
    	}
 
     @Override
-    public boolean deleteDetailDataList(){
-        int size = getDetailDataList().size();
-   		getDatabase().beginTransaction();
-        int result = getDatabase().delete(
-                getDetailDao().getTableName(), "1", null);
-   		getDatabase().setTransactionSuccessful();
-   		getDatabase().endTransaction();
-
-        if(result == size) {
-            return true;
-        } else {
-            return false;
-        }
-   	}
-
-    @Override
-	public boolean deleteMasterData(Long dataId){
+	public boolean deleteData(Long dataId){
 		getDatabase().beginTransaction();
-        boolean result = getMasterDao().delete(dataId);
-		getDatabase().setTransactionSuccessful();
-		getDatabase().endTransaction();
-		return result;
-	}
-
-    @Override
-	public boolean deleteDetailData(Long dataId){
-		getDatabase().beginTransaction();
-        boolean result = getDetailDao().delete(dataId);
+        boolean result = getDataDao().delete(dataId);
 		getDatabase().setTransactionSuccessful();
 		getDatabase().endTransaction();
 		return result;
@@ -226,36 +157,19 @@ public class DatabaseMasterDetail extends AndroidScreenDatabase
 
 
     @Override
-	public Long saveMasterData(MasterData data){
+	public Long saveData(DetailData data){
+
+        debug("saveData");
 
 		long result = 0;
 		try {
 
 			getDatabase().beginTransaction();
-			result = getMasterDao().save(data);
+			result = getDataDao().save(data);
 			getDatabase().setTransactionSuccessful();
 
 		} catch (Exception ex) {
-            debug("saveMasterData", "error", ex.toString());
-		}
-		getDatabase().endTransaction();
-
-
-		return result;
-	}
-
-    @Override
-	public Long saveDetailData(DetailData data){
-
-		long result = 0;
-		try {
-
-			getDatabase().beginTransaction();
-			result = getDetailDao().save(data);
-			getDatabase().setTransactionSuccessful();
-
-		} catch (Exception ex) {
-            debug("saveDetailData", "error", ex.toString());
+            debug("saveData", "error", ex.toString());
 		}
 		getDatabase().endTransaction();
 
@@ -265,30 +179,12 @@ public class DatabaseMasterDetail extends AndroidScreenDatabase
 
 
     @Override
-    public boolean updateMasterData(MasterData data) {
+    public boolean updateData(DetailData data) {
         boolean result = false;
         try {
 
             getDatabase().beginTransaction();
-            getMasterDao().update(data, data.getId());
-            getDatabase().setTransactionSuccessful();
-            result = true;
-
-        } catch (Exception e) {
-
-        }
-        getDatabase().endTransaction();
-        return result;
-    }
-
-
-    @Override
-    public boolean updateDetailData(DetailData data) {
-        boolean result = false;
-        try {
-
-            getDatabase().beginTransaction();
-            getDetailDao().update(data, data.getId());
+            getDataDao().update(data, data.getId());
             getDatabase().setTransactionSuccessful();
             result = true;
 

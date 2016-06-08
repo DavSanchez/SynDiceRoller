@@ -30,9 +30,6 @@ public class DatabaseMasterDetailUtils extends SQLiteOpenHelper {
             DetailTable detailTable = new DetailTable();
             detailTable.onCreate(db);
 
-            MasterTable masterTable = new MasterTable();
-            masterTable.onCreate(db);
-
         } catch (Exception e) {
         }
     }
@@ -43,9 +40,6 @@ public class DatabaseMasterDetailUtils extends SQLiteOpenHelper {
 
             DetailTable detailTable = new DetailTable();
             detailTable.onUpgrade(db, oldVer, newVer);
-
-            MasterTable masterTable = new MasterTable();
-            masterTable.onUpgrade(db, oldVer, newVer);
 
         } catch (Exception e) {
         }

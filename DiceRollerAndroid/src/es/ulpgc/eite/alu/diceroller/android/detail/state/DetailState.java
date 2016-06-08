@@ -1,11 +1,8 @@
 package es.ulpgc.eite.alu.diceroller.android.detail.state;
 
-import es.ulpgc.eite.alu.diceroller.android.detail.data.DetailData;
 import es.ulpgc.eite.framework.core.screen.I_ScreenState;
+import es.ulpgc.eite.alu.diceroller.android.detail.data.DetailData;
 
-/**
- * Created by David on 7/6/16.
- */
 public class DetailState implements I_ScreenState {
 
     private DetailData _data;
@@ -25,4 +22,5 @@ public class DetailState implements I_ScreenState {
     public void setData(DetailData data) {
         _data = data;
     }
+
 }
