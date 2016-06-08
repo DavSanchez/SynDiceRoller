@@ -3,7 +3,6 @@ package es.ulpgc.eite.alu.diceroller.android.main_screen.presenter;
 import es.ulpgc.eite.alu.diceroller.android.main_screen.model.I_DiceRollerModel;
 import es.ulpgc.eite.alu.diceroller.android.main_screen.view.I_DiceRollerView;
 import es.ulpgc.eite.alu.diceroller.android.main_screen.state.DiceRollerState;
-import es.ulpgc.eite.alu.diceroller.android.master.presenter.MasterPresenter;
 import es.ulpgc.eite.alu.diceroller.android.mediator.DiceRollerMediatorCode;
 import es.ulpgc.eite.framework.android.AndroidScreenPresenter;
 import es.ulpgc.eite.framework.core.screen.I_ScreenObserver;
