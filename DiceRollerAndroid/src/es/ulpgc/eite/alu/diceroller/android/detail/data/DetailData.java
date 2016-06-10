@@ -14,13 +14,51 @@ public class DetailData {
     @Column(name = "label")
     private String label;
 
+    @Column(name = "tipo de tirada")
+    private String typeOfRoll;
+
+    @Column(name = "dado")
+    private int sides;
+
+    @Column(name = "modificador")
+    private int modifier;
+
+    public String getTypeOfRoll() {
+        return typeOfRoll;
+    }
+
+    public void setTypeOfRoll(String typeOfRoll) {
+        this.typeOfRoll = typeOfRoll;
+    }
+
+    public int getSides() {
+        return sides;
+    }
+
+    public void setSides(int sides) {
+        this.sides = sides;
+    }
+
+    public int getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(int modifier) {
+        this.modifier = modifier;
+    }
 
     public DetailData() {
         setLabel("");
+        setTypeOfRoll("");
+        setSides(0);
+        setModifier(0);
     }
 
-    public DetailData(String txt) {
+    public DetailData(String txt, String type, int sid, int mod) {
         setLabel(txt);
+        setTypeOfRoll(type);
+        setSides(sid);
+        setModifier(mod);
     }
 
     public Long getId() {

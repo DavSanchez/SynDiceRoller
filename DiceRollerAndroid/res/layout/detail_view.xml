@@ -47,7 +47,7 @@
                   android:layout_margin="0dp"
                   android:orientation="horizontal">
         <Button
-                android:id="@+id/btn_data"
+                android:id="@+id/btn_remove"
                 style="@style/RedStyle"
                 android:textStyle="bold"
                 android:textSize="@dimen/btn_field"

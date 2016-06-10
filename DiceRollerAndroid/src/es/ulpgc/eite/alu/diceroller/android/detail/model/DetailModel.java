@@ -4,9 +4,16 @@ import es.ulpgc.eite.framework.android.AndroidScreenModel;
 import es.ulpgc.eite.alu.diceroller.android.detail.data.DetailData;
 import es.ulpgc.eite.alu.diceroller.android.detail.presenter.I_DetailPresenter;
 
+import java.util.Random;
+
 public class DetailModel extends AndroidScreenModel implements I_DetailModel{
 
     private DetailData _data;
+    private int _resultadoTiradaDetail;
+
+    private I_DetailPresenter getDetailPresenter(){
+        return (I_DetailPresenter) getScreenPresenter();
+    }
 
     @Override
     public DetailData getData() {
@@ -18,7 +25,23 @@ public class DetailModel extends AndroidScreenModel implements I_DetailModel{
         _data = data;
     }
 
-    private I_DetailPresenter getDetailPresenter(){
-        return (I_DetailPresenter) getScreenPresenter();
+    @Override
+    public void rollDetail(int carasDado, int modificador) {
+        Random roll = new Random();
+        int tirada = roll.nextInt(carasDado)+1;
+        int resultado = tirada + modificador;
+        setResultadoTiradaDetail(resultado);
     }
+
+
+    @Override
+    public int getResultadoTiradaDetail() {
+        return _resultadoTiradaDetail;
+    }
+
+    @Override
+    public void setResultadoTiradaDetail(int resultadoTirada) {
+        _resultadoTiradaDetail = resultadoTirada;
+    }
+
 }

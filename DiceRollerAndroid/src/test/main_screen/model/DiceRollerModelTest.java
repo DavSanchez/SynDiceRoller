@@ -1,4 +1,4 @@
-package test.model;
+package test.main_screen.model;
 
 import es.ulpgc.eite.alu.diceroller.android.main_screen.model.DiceRollerModel;
 import es.ulpgc.eite.alu.diceroller.android.main_screen.model.I_DiceRollerModel;

@@ -1,5 +1,6 @@
 package es.ulpgc.eite.alu.diceroller.android.detail.presenter;
 
+import es.ulpgc.eite.alu.diceroller.android.mediator.DiceRollerMediatorSingleton;
 import es.ulpgc.eite.framework.android.AndroidScreenPresenter;
 import es.ulpgc.eite.framework.core.screen.I_ScreenObservable;
 import es.ulpgc.eite.framework.core.screen.I_ScreenState;
@@ -11,10 +12,14 @@ import es.ulpgc.eite.alu.diceroller.android.detail.view.I_DetailView;
 import es.ulpgc.eite.alu.diceroller.android.master.view.MasterView;
 import es.ulpgc.eite.alu.diceroller.android.mediator.DiceRollerMediatorCode;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 
 public class DetailPresenter
         extends AndroidScreenPresenter implements I_DetailPresenter, I_ScreenObservable {
 
+    private String _resultadoTiradaStringDetail;
 
     private I_DetailModel getDetailModel(){
         return (I_DetailModel) getScreenModel();
@@ -22,6 +27,30 @@ public class DetailPresenter
 
     private I_DetailView getDetailView(){
         return (I_DetailView) getScreenView();
+    }
+
+    @Override
+    public void numberToStringDetail(Integer numero){
+        String numeroStringDetail = numero.toString();
+        setResultadoTiradaStringDetail(numeroStringDetail);
+    }
+
+    @Override
+    public String getResultadoTiradaStringDetail() {
+        return _resultadoTiradaStringDetail;
+    }
+
+    @Override
+    public void setResultadoTiradaStringDetail(String resultadoTiradaStringDetail) {
+        _resultadoTiradaStringDetail = resultadoTiradaStringDetail;
+    }
+
+    // CAMBIAR ESTO QUE VIENE DE LA PRINCIPAL
+    @Override
+    public void rollBtnPressed(){
+        getDetailModel().rollDetail(getDetailModel().getData().getSides(), getDetailModel().getData().getModifier());
+        numberToStringDetail(getDetailModel().getResultadoTiradaDetail());
+        getDetailView().display(getResultadoTiradaStringDetail());
     }
 
 
@@ -38,7 +67,8 @@ public class DetailPresenter
         debug("createScreen");
 
         getDetailView().setDetailLayout();
-        getDetailView().setDetailBtnListener();
+        getDetailView().setDetailBtnListenerRemove();
+        getDetailView().setDetailBtnListenerRoll();
         getDetailModel().setData(new DetailData());
     }
 

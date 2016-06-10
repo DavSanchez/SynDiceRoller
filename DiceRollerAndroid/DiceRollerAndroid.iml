@@ -38,5 +38,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="Gradle: info.cukes:gherkin:2.12.2" level="project" />
   </component>
 </module>
