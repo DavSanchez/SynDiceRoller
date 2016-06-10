@@ -12,7 +12,9 @@ import es.ulpgc.eite.framework.core.screen.I_ScreenView;
 /**
  * Created by David on 12/4/16.
  */
-public class DiceRollerPresenter extends AndroidScreenPresenter implements I_DiceRollerPresenter, I_ScreenObserver {
+public class DiceRollerPresenter
+        //extends AndroidScreenPresenter implements I_DiceRollerPresenter, I_ScreenObserver {
+        extends AndroidScreenPresenter implements I_DiceRollerPresenter {
 
     private String _display;
     private String _resultadoTiradaString;
@@ -38,7 +40,8 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
 
     @Override
     public void botonListaPressed(){
-        startNextScreenWithObserver(this, DiceRollerMediatorCode.LISTA);
+        //startNextScreenWithObserver(this, DiceRollerMediatorCode.LISTA);
+        startNextScreenWithFinish(DiceRollerMediatorCode.LISTA, false);
     }
 
 
@@ -136,8 +139,10 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
         _display = display;
     }
 
+    /*
     @Override
     public I_ScreenState updateObserverState(Class<? extends I_ScreenView> view, int code, I_ScreenState state) {
         return null;
     }
+    */
 }
