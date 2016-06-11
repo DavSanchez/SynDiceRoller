@@ -1,5 +1,7 @@
 package es.ulpgc.eite.alu.diceroller.android.detail.model;
 
+import es.ulpgc.eite.alu.diceroller.android.common.DiceFactory;
+import es.ulpgc.eite.alu.diceroller.android.common.I_TiraDados;
 import es.ulpgc.eite.framework.android.AndroidScreenModel;
 import es.ulpgc.eite.alu.diceroller.android.detail.data.DetailData;
 import es.ulpgc.eite.alu.diceroller.android.detail.presenter.I_DetailPresenter;
@@ -15,6 +17,13 @@ public class DetailModel extends AndroidScreenModel implements I_DetailModel{
         return (I_DetailPresenter) getScreenPresenter();
     }
 
+    private DiceFactory factory;
+
+    private DiceFactory getDiceFactory(){
+        factory = DiceFactory.getFactory();
+        return factory;
+    }
+
     @Override
     public DetailData getData() {
         return _data;
@@ -27,10 +36,9 @@ public class DetailModel extends AndroidScreenModel implements I_DetailModel{
 
     @Override
     public void rollDetail(int carasDado, int modificador) {
-        Random roll = new Random();
-        int tirada = roll.nextInt(carasDado)+1;
-        int resultado = tirada + modificador;
-        setResultadoTiradaDetail(resultado);
+        I_TiraDados dado = getDiceFactory().spawnDice();
+        dado.rollConMods(carasDado, modificador);
+        setResultadoTiradaDetail(dado.getResultadoTirada());
     }
 
 
