@@ -18,10 +18,10 @@ public class DetailData {
     private String typeOfRoll;
 
     @Column(name = "dado")
-    private int sides;
+    private String sides;
 
     @Column(name = "modificador")
-    private int modifier;
+    private String modifier;
 
     public String getTypeOfRoll() {
         return typeOfRoll;
@@ -31,30 +31,30 @@ public class DetailData {
         this.typeOfRoll = typeOfRoll;
     }
 
-    public int getSides() {
+    public String getSides() {
         return sides;
     }
 
-    public void setSides(int sides) {
+    public void setSides(String sides) {
         this.sides = sides;
     }
 
-    public int getModifier() {
+    public String getModifier() {
         return modifier;
     }
 
-    public void setModifier(int modifier) {
+    public void setModifier(String modifier) {
         this.modifier = modifier;
     }
 
     public DetailData() {
         setLabel("");
         setTypeOfRoll("");
-        setSides(0);
-        setModifier(0);
+        setSides("");
+        setModifier("");
     }
 
-    public DetailData(String txt, String type, int sid, int mod) {
+    public DetailData(String txt, String type, String sid, String mod) {
         setLabel(txt);
         setTypeOfRoll(type);
         setSides(sid);
@@ -89,8 +89,8 @@ public class DetailData {
         return false;
     }
 
-    @Override
-    public String toString() {
-        return getLabel();
-    }
+//    @Override
+//    public String toString() {
+//        return getLabel();
+//    }
 }

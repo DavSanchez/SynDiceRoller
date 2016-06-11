@@ -4,7 +4,6 @@ import android.database.sqlite.SQLiteDatabase;
 
 import org.droidpersistence.dao.DroidDao;
 import org.droidpersistence.dao.TableDefinition;
-
 import es.ulpgc.eite.alu.diceroller.android.detail.data.DetailData;
 
 

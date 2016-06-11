@@ -39,11 +39,11 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel{
 
     private void fillCollection() {
         debug("fillCollection");
-//
-//        for(int pos=0; pos < 5; pos++){
-//            DetailData data = new DetailData("Data " + pos);
-//            getMasterDetailDatabase().saveData(data);
-//        }
+
+        for(int pos=0; pos < 5; pos++){
+            DetailData data = new DetailData("Ataque " + pos, "Ataque", String.valueOf(20), String.valueOf(pos));
+            getMasterDetailDatabase().saveData(data);
+        }
 
     }
 

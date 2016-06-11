@@ -48,7 +48,9 @@ public class DetailPresenter
     // CAMBIAR ESTO QUE VIENE DE LA PRINCIPAL
     @Override
     public void rollBtnPressed(){
-        getDetailModel().rollDetail(getDetailModel().getData().getSides(), getDetailModel().getData().getModifier());
+        int sides = Integer.parseInt(getDetailModel().getData().getSides());
+        int modif = Integer.parseInt(getDetailModel().getData().getModifier());
+        getDetailModel().rollDetail(sides, modif);
         numberToStringDetail(getDetailModel().getResultadoTiradaDetail());
         getDetailView().display(getResultadoTiradaStringDetail());
     }
