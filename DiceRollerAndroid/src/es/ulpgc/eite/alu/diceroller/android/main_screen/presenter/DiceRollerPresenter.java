@@ -1,5 +1,8 @@
 package es.ulpgc.eite.alu.diceroller.android.main_screen.presenter;
 
+import es.ulpgc.eite.alu.diceroller.android.common.DiceFactory;
+import es.ulpgc.eite.alu.diceroller.android.common.I_NumerosAStringBridge;
+import es.ulpgc.eite.alu.diceroller.android.common.NumerosAStringBridge;
 import es.ulpgc.eite.alu.diceroller.android.main_screen.model.I_DiceRollerModel;
 import es.ulpgc.eite.alu.diceroller.android.main_screen.view.I_DiceRollerView;
 import es.ulpgc.eite.alu.diceroller.android.main_screen.state.DiceRollerState;
@@ -31,11 +34,21 @@ public class DiceRollerPresenter
 
     private I_DiceRollerPresenter getDiceRoller() { return _presenter; }
 
+
+    private DiceFactory factory;
+
+    private DiceFactory getDiceFactory(){
+        factory = DiceFactory.getFactory();
+        return factory;
+    }
+
     @Override
     public void dicePressed(int caras){
         getDiceRollerModel().roll(caras);
-        numberToString(getDiceRollerModel().getResultadoTirada());
-        getDiceRollerView().display(getResultadoTiradaString());
+        I_NumerosAStringBridge bridge = getDiceFactory().createBridge();
+        bridge.numberToString(getDiceRollerModel().getResultadoTirada());
+        _resultadoTiradaString = bridge.getResultadoTiradaString();
+        getDiceRollerView().display(_resultadoTiradaString);
     }
 
     @Override
@@ -45,21 +58,21 @@ public class DiceRollerPresenter
     }
 
 
-    @Override
-    public void numberToString(Integer numero){
-        String numeroString = numero.toString();
-        setResultadoTiradaString(numeroString);
-    }
-
-    @Override
-    public String getResultadoTiradaString() {
-        return _resultadoTiradaString;
-    }
-
-    @Override
-    public void setResultadoTiradaString(String resultadoTiradaString) {
-        _resultadoTiradaString = resultadoTiradaString;
-    }
+//    @Override
+//    public void numberToString(Integer numero){
+//        String numeroString = numero.toString();
+//        setResultadoTiradaString(numeroString);
+//    }
+//
+//    @Override
+//    public String getResultadoTiradaString() {
+//        return _resultadoTiradaString;
+//    }
+//
+//    @Override
+//    public void setResultadoTiradaString(String resultadoTiradaString) {
+//        _resultadoTiradaString = resultadoTiradaString;
+//    }
 
 
     @Override
@@ -81,7 +94,7 @@ public class DiceRollerPresenter
     @Override
     public void resumeScreen() {
         debug("resumeScreen");
-        getDiceRollerView().display(getResultadoTiradaString());
+        getDiceRollerView().display(_resultadoTiradaString);
 
     }
 

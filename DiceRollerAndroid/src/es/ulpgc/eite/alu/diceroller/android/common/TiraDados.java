@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Created by David on 10/6/16.
  */
-public class TiraDados implements I_Tiradados {
+public class TiraDados implements I_TiraDados {
 
     private int _resultadoTirada;
 

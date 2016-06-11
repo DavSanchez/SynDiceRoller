@@ -1,8 +1,8 @@
 package es.ulpgc.eite.alu.diceroller.android.main_screen.model;
 
+import es.ulpgc.eite.alu.diceroller.android.common.DiceFactory;
+import es.ulpgc.eite.alu.diceroller.android.common.I_TiraDados;
 import es.ulpgc.eite.framework.android.AndroidScreenModel;
-
-import java.util.Random;
 
 /**
  * Created by David on 12/4/16.
@@ -10,11 +10,18 @@ import java.util.Random;
 public class DiceRollerModel extends AndroidScreenModel implements I_DiceRollerModel {
     private int _resultadoTirada;
 
+    private DiceFactory factory;
+
+    private DiceFactory getDiceFactory(){
+        factory = DiceFactory.getFactory();
+        return factory;
+    }
+
     @Override
     public void roll(int carasDado) {
-        Random tirada = new Random();
-        int resultado = tirada.nextInt(carasDado)+1;
-        setResultadoTirada(resultado);
+        I_TiraDados dado = getDiceFactory().spawnDice();
+        dado.roll(carasDado);
+        setResultadoTirada(dado.getResultadoTirada());
     }
 
 
