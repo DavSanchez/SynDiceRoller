@@ -26,11 +26,11 @@
     },
     {
       "label": "Tirada 4",
-      "descripcion": "Tirada de daño al mismo estilo que la anterior. 1d12 + 8.",
+      "descripcion": "Tirada de daño masiva, 10d6.",
       "tipo_tirada": "Damage",
-      "numero_dados": 1,
-      "dado" : 12,
-      "modificador" : 8
+      "numero_dados": 10,
+      "dado" : 6,
+      "modificador" : 0
     }
   ]
 }

@@ -66,15 +66,14 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight=".25"
-            android:orientation="horizontal"
-            android:weightSum="1.0" >
+            android:orientation="horizontal">
 
         <Button
                 android:id="@+id/buttond6"
                 style="@style/ButtonText"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight=".333"
+                android:layout_weight="1"
                 android:background="@drawable/custombutton"
                 android:text="@string/d6_text"
                 android:textSize="30sp" />
@@ -84,7 +83,7 @@
                 style="@style/ButtonText"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight=".333"
+                android:layout_weight="1"
                 android:background="@drawable/custombutton"
                 android:text="@string/d8_text"
                 android:textSize="30sp" />
@@ -94,7 +93,7 @@
                 style="@style/ButtonText"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight=".336"
+                android:layout_weight="1"
                 android:background="@drawable/custombutton"
                 android:text="@string/d10_text"
                 android:textSize="30sp" />
@@ -106,15 +105,14 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight=".25"
-            android:orientation="horizontal"
-            android:weightSum="1.0" >
+            android:orientation="horizontal">
 
         <Button
                 android:id="@+id/buttond12"
                 style="@style/ButtonText"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight=".333"
+                android:layout_weight="1"
                 android:background="@drawable/custombutton"
                 android:text="@string/d12_text"
                 android:textSize="30sp"/>
@@ -124,7 +122,7 @@
                 style="@style/ButtonText"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight=".333"
+                android:layout_weight="1"
                 android:background="@drawable/custombutton"
                 android:text="@string/d20_text"
                 android:textSize="30sp"/>
@@ -134,7 +132,7 @@
                 style="@style/ButtonText"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight=".336"
+                android:layout_weight="1"
                 android:background="@drawable/custombutton"
                 android:text="@string/d24_text"
                 android:textSize="30sp"/>
@@ -145,8 +143,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight=".25"
-            android:orientation="horizontal"
-            android:weightSum="1.0" >
+            android:orientation="horizontal">
 
         <Button
                 android:id="@+id/buttond100"

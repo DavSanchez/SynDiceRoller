@@ -7,7 +7,9 @@ public interface I_DetailModel {
     DetailData getData();
     void setData(DetailData data);
 
-    void rollDetail(int carasDado, int modificador);
+    //void rollDetail(int carasDado, int modificador);
+
+    void rollDetail(int numDados, int carasDado, int modificador);
 
     int getResultadoTiradaDetail();
 

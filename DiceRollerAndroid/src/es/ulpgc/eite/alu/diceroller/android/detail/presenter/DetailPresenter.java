@@ -55,12 +55,12 @@ public class DetailPresenter
         _resultadoTiradaStringDetail = resultadoTiradaStringDetail;
     }
 
-    // CAMBIAR ESTO QUE VIENE DE LA PRINCIPAL
     @Override
     public void rollBtnPressed(){
+        int numDados = getDetailModel().getData().getNumDados();
         int sides = getDetailModel().getData().getSides();
         int modif = getDetailModel().getData().getModifier();
-        getDetailModel().rollDetail(sides, modif);
+        getDetailModel().rollDetail(numDados, sides, modif);
         I_NumerosAStringBridge bridge = getDiceFactory().createBridge();
         bridge.numberToString(getDetailModel().getResultadoTiradaDetail());
         _resultadoTiradaStringDetail = bridge.getResultadoTiradaString();
@@ -97,6 +97,8 @@ public class DetailPresenter
         debug("resumeScreen");
         getDetailView().setDetailData(getDetailModel().getData());
         getDetailView().setDescriptionData(getDetailModel().getData());
+        getDetailView().display(_resultadoTiradaStringDetail);
+
     }
 
     @Override

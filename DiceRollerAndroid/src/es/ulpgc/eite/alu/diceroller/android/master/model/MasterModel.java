@@ -58,7 +58,6 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel{
             tiradasArray = tiradasDB.getJSONArray("tiradas");
             for (int i = 0; i < tiradasArray.length(); i++) {
                 JSONObject tirada = tiradasArray.getJSONObject(i);
-                // Pulling items from the array
                 String label = tirada.getString("label");
                 String descrip = tirada.getString("descripcion");
                 String tipoTirada = tirada.getString("tipo_tirada");
@@ -76,7 +75,6 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel{
     public String loadJSONFromAsset(String filename) {
         String json = null;
         try {
-            //InputStream in = getCurrentMediator().getContext().getAssets().open(filename + ".json");
             InputStream in = getCurrentMediator().getContext().getAssets().open(filename);
             int size = in.available();
             byte[] buffer = new byte[size];

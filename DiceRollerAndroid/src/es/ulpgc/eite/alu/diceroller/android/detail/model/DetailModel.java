@@ -35,9 +35,9 @@ public class DetailModel extends AndroidScreenModel implements I_DetailModel{
     }
 
     @Override
-    public void rollDetail(int carasDado, int modificador) {
+    public void rollDetail(int numDados, int carasDado, int modificador) {
         I_TiraDados dado = getDiceFactory().spawnDice();
-        dado.rollConMods(carasDado, modificador);
+        dado.complexRoll(numDados, carasDado, modificador);
         setResultadoTiradaDetail(dado.getResultadoTirada());
     }
 

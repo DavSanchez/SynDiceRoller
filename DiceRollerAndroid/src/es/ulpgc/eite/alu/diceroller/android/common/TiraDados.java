@@ -16,22 +16,21 @@ public class TiraDados implements I_TiraDados {
         setResultadoTirada(resultado);
     }
 
-    @Override
-    public void rollConMods(int carasDado, int modificador) {
-        roll(carasDado);
-        setResultadoTirada(getResultadoTirada() + modificador);
-    }
+//    @Override
+//    public void rollConMods(int carasDado, int modificador) {
+//        roll(carasDado);
+//        setResultadoTirada(getResultadoTirada() + modificador);
+//    }
 
-    /*
     @Override
     public void complexRoll(int numDados, int carasDado, int modificador) {
         int res = 0;
-        for (int veces = 0; veces < numDados; numDados++){
+        for (int veces = 0; veces < numDados; veces++){
             roll(carasDado);
-            res = res + getResultadoTirada();
+            res += getResultadoTirada();
         }
-        setResultadoTirada(getResultadoTirada() + modificador;);
-    }*/
+        setResultadoTirada(res + modificador);
+    }
 
     @Override
     public int getResultadoTirada() {
