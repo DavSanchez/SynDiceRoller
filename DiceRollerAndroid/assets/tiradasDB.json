@@ -1,0 +1,36 @@
+{
+  "tiradas": [
+    {
+      "label": "Tirada 1",
+      "descripcion": "1d20 + 3",
+      "tipo_tirada": "Attack",
+      "numero_dados": 1,
+      "dado" : 20,
+      "modificador" : 3
+    },
+    {
+      "label": "Tirada 2",
+      "descripcion": "1d6",
+      "tipo_tirada": "Damage",
+      "numero_dados": 1,
+      "dado" : 6,
+      "modificador" : 0
+    },
+    {
+      "label": "Tirada 3",
+      "descripcion": "1d8 + 5",
+      "tipo_tirada": "Damage",
+      "numero_dados": 1,
+      "dado" : 8,
+      "modificador" : 5
+    },
+    {
+      "label": "Tirada 4",
+      "descripcion": "1d12 + 8",
+      "tipo_tirada": "Damage",
+      "numero_dados": 1,
+      "dado" : 12,
+      "modificador" : 8
+    }
+  ]
+}
