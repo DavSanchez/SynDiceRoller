@@ -23,6 +23,7 @@ public class DetailPresenter
 
     private String _resultadoTiradaStringDetail;
     private String displayRotated = null;
+    private Long idData;
 
     private I_DetailModel getDetailModel(){
         return (I_DetailModel) getScreenModel();
@@ -97,13 +98,17 @@ public class DetailPresenter
         debug("resumeScreen");
         getDetailView().setDetailData(getDetailModel().getData());
         getDetailView().setDescriptionData(getDetailModel().getData());
-        getDetailView().display(_resultadoTiradaStringDetail);
-
+        if(getDetailModel().getData().getId().equals(idData)) {
+            getDetailView().display(_resultadoTiradaStringDetail);
+        } else {
+            setResultadoTiradaStringDetail("");
+        }
     }
 
     @Override
     public void pauseScreen() {
         debug("pauseScreen");
+        idData = getDetailModel().getData().getId();
     }
 
     @Override
