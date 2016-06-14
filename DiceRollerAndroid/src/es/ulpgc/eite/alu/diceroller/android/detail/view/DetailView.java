@@ -74,6 +74,12 @@ public class DetailView extends AndroidScreenView implements I_DetailView {
     }
 
     @Override
+    public void setDescriptionData(DetailData data){
+        TextView dataView = (TextView) findViewById(R.id.descr_data);
+        dataView.setText(data.getDescrip());
+    }
+
+    @Override
     public void display(String numeroPantalla) {
         debug ("display", "numeroPantalla", numeroPantalla);
         TextView display = (TextView) findViewById(R.id.detailNumberRolled);

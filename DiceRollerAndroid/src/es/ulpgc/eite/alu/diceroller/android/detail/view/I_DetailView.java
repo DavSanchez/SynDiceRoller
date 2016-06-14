@@ -12,6 +12,8 @@ public interface I_DetailView {
     void setDetailLayout();
     void setDetailData(DetailData data);
 
+    void setDescriptionData(DetailData data);
+
     void display(String numeroPantalla);
 
 

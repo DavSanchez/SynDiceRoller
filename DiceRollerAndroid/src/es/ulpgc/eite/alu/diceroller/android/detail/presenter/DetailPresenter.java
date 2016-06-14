@@ -96,6 +96,7 @@ public class DetailPresenter
     public void resumeScreen() {
         debug("resumeScreen");
         getDetailView().setDetailData(getDetailModel().getData());
+        getDetailView().setDescriptionData(getDetailModel().getData());
     }
 
     @Override
