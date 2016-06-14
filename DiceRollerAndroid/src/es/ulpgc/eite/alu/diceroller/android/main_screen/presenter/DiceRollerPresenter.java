@@ -1,40 +1,78 @@
 package es.ulpgc.eite.alu.diceroller.android.main_screen.presenter;
 
+import es.ulpgc.eite.alu.diceroller.android.common.DiceFactory;
+import es.ulpgc.eite.alu.diceroller.android.common.I_NumerosAStringBridge;
+import es.ulpgc.eite.alu.diceroller.android.common.NumerosAStringBridge;
 import es.ulpgc.eite.alu.diceroller.android.main_screen.model.I_DiceRollerModel;
 import es.ulpgc.eite.alu.diceroller.android.main_screen.view.I_DiceRollerView;
 import es.ulpgc.eite.alu.diceroller.android.main_screen.state.DiceRollerState;
+import es.ulpgc.eite.alu.diceroller.android.mediator.DiceRollerMediatorCode;
 import es.ulpgc.eite.framework.android.AndroidScreenPresenter;
+import es.ulpgc.eite.framework.core.screen.I_ScreenObserver;
 import es.ulpgc.eite.framework.core.screen.I_ScreenState;
 import es.ulpgc.eite.framework.core.screen.I_ScreenView;
 
 /**
  * Created by David on 12/4/16.
  */
-public class DiceRollerPresenter extends AndroidScreenPresenter implements I_DiceRollerPresenter {
+public class DiceRollerPresenter
+        //extends AndroidScreenPresenter implements I_DiceRollerPresenter, I_ScreenObserver {
+        extends AndroidScreenPresenter implements I_DiceRollerPresenter {
 
     private String _display;
+    private String _resultadoTiradaString;
 
     private I_DiceRollerView getDiceRollerView(){ return (I_DiceRollerView) getScreenView(); }
 
     private I_DiceRollerModel getDiceRollerModel(){ return (I_DiceRollerModel) getScreenModel(); }
 
+    // REVISAR ESTAS TRES LÍNEAS POR SI CÓDIGO MUERTO. TODO
 
-    // REVISAR ESTAS TRES LÍNEAS POR SI QUEDAN CÓDIGO MUERTO. TODO
     private I_DiceRollerPresenter _presenter;
 
     private void setDiceRoller (I_DiceRollerPresenter presenter) { _presenter = presenter; }
 
     private I_DiceRollerPresenter getDiceRoller() { return _presenter; }
 
-    @Override
-    public void dicePressed(int caras){
-        getDiceRollerModel().roll(caras);
-        getDiceRollerModel().numberToString(getDiceRollerModel().getResultadoTirada());
-        getDiceRollerView().display(getDiceRollerModel().getResultadoTiradaString());
+
+    private DiceFactory factory;
+
+    private DiceFactory getDiceFactory(){
+        factory = DiceFactory.getFactory();
+        return factory;
     }
 
     @Override
-    public void botonListaPressed(){ }
+    public void dicePressed(int caras){
+        getDiceRollerModel().roll(caras);
+        I_NumerosAStringBridge bridge = getDiceFactory().createBridge();
+        bridge.numberToString(getDiceRollerModel().getResultadoTirada());
+        _resultadoTiradaString = bridge.getResultadoTiradaString();
+        getDiceRollerView().display(_resultadoTiradaString);
+    }
+
+    @Override
+    public void botonListaPressed(){
+        //startNextScreenWithObserver(this, DiceRollerMediatorCode.LISTA);
+        startNextScreenWithFinish(DiceRollerMediatorCode.LISTA, false);
+    }
+
+
+//    @Override
+//    public void numberToString(Integer numero){
+//        String numeroString = numero.toString();
+//        setResultadoTiradaString(numeroString);
+//    }
+//
+//    @Override
+//    public String getResultadoTiradaString() {
+//        return _resultadoTiradaString;
+//    }
+//
+//    @Override
+//    public void setResultadoTiradaString(String resultadoTiradaString) {
+//        _resultadoTiradaString = resultadoTiradaString;
+//    }
 
 
     @Override
@@ -43,7 +81,7 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
 
         getDiceRollerView().initDiceRoller();
 
-        // REVISAR ESTO PARA LIMPIAR!! TODO
+        // LIMPIAR. TODO
         //   setDiceRoller(new DiceRollerPresenter(
         //           getDiceRollerView(), getDiceRollerModel()));
     }
@@ -56,13 +94,13 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
     @Override
     public void resumeScreen() {
         debug("resumeScreen");
-        getDiceRollerView().display(getDiceRollerModel().getResultadoTiradaString());
+        getDiceRollerView().display(_resultadoTiradaString);
 
     }
 
     @Override
     public void pauseScreen() {
-        debug("pauseScren");
+        debug("pauseScreen");
     }
 
     @Override
@@ -98,7 +136,8 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
         debug("getNextState", "code", code);
 
         return new DiceRollerState(_display);
-        // REVISAR ESTO PARA LIMPIAR!! TODO
+
+        //LIMPIAR. TODO
         //debug("getNextState", "data", data);
         //return getScreenState();
     }
@@ -112,4 +151,11 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
     public void setDisplay(String display) {
         _display = display;
     }
+
+    /*
+    @Override
+    public I_ScreenState updateObserverState(Class<? extends I_ScreenView> view, int code, I_ScreenState state) {
+        return null;
+    }
+    */
 }

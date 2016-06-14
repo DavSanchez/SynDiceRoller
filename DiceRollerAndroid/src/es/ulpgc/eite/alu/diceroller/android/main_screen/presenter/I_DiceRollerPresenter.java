@@ -9,6 +9,12 @@ public interface I_DiceRollerPresenter {
 
     void botonListaPressed();
 
+//    void numberToString(Integer numero);
+//
+//    String getResultadoTiradaString();
+//
+//    void setResultadoTiradaString(String resultadoTiradaString);
+
     String getDisplay();
 
     void setDisplay(String display);

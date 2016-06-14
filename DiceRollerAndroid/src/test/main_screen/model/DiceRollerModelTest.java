@@ -1,4 +1,4 @@
-package test.model;
+package test.main_screen.model;
 
 import es.ulpgc.eite.alu.diceroller.android.main_screen.model.DiceRollerModel;
 import es.ulpgc.eite.alu.diceroller.android.main_screen.model.I_DiceRollerModel;
@@ -12,6 +12,8 @@ import static org.junit.Assert.*;
  */
 public class DiceRollerModelTest {
     private I_DiceRollerModel _lanzaDados;
+
+    // MÁS TEST. TODO
 
     @Before
     public void setUp() throws Exception {
@@ -28,6 +30,6 @@ public class DiceRollerModelTest {
             }
     }
 
-    // MÁS TESTS. TODO
+
 
 }

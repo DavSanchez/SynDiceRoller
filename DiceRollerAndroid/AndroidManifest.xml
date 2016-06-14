@@ -18,5 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <!-- MASTER-DETAIL -->
+        <activity android:name=".master.view.MasterView"/>
+        <activity android:name=".detail.view.DetailView"/>
+
+
     </application>
 </manifest>
