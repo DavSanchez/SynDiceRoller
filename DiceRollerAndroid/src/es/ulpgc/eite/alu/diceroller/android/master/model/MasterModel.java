@@ -1,15 +1,20 @@
 package es.ulpgc.eite.alu.diceroller.android.master.model;
 
+import es.ulpgc.eite.alu.diceroller.android.common.JSONParser;
 import es.ulpgc.eite.framework.android.AndroidScreenModel;
 import es.ulpgc.eite.alu.diceroller.android.detail.data.DetailData;
 import es.ulpgc.eite.alu.diceroller.android.database.I_MasterDetailDatabase;
 import es.ulpgc.eite.alu.diceroller.android.master.presenter.I_MasterPresenter;
+import es.ulpgc.eite.framework.android.I_AndroidMediatorSingleton;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 public class MasterModel extends AndroidScreenModel implements I_MasterModel{
 
     private int position;
+    String jsonFile = "";
 
     private I_MasterPresenter getMasterPresenter() {
         return (I_MasterPresenter) getScreenPresenter();
@@ -18,6 +23,17 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel{
     private I_MasterDetailDatabase getMasterDetailDatabase(){
         return (I_MasterDetailDatabase) getScreenDatabase();
     }
+
+    private I_AndroidMediatorSingleton getCurrentMediator(){
+        return (I_AndroidMediatorSingleton) getMediator();
+    }
+
+//    private JSONParser parser;
+//
+//    private JSONParser getParser(){
+//        parser = JSONParser.getJsonParser();
+//        return parser;
+//    }
 
     @Override
     public int getPosition() {
@@ -39,9 +55,10 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel{
 
     private void fillCollection() {
         debug("fillCollection");
+        //getCurrentMediator().getContext().getAssets();
 
         for(int pos=0; pos < 5; pos++){
-            DetailData data = new DetailData("Ataque " + pos, "Ataque", String.valueOf(20), String.valueOf(pos));
+            DetailData data = new DetailData("Ataque " + pos, "Descripcion", "Ataque", 1, 20, pos);
             getMasterDetailDatabase().saveData(data);
         }
 

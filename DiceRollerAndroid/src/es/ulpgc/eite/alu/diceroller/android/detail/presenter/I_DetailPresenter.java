@@ -2,7 +2,7 @@ package es.ulpgc.eite.alu.diceroller.android.detail.presenter;
 
 public interface I_DetailPresenter {
 
-    void numberToStringDetail(Integer numero);
+    //void numberToStringDetail(Integer numero);
 
     String getResultadoTiradaStringDetail();
 

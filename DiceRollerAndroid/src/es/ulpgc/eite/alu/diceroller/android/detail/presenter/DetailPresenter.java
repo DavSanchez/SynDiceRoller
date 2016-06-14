@@ -1,5 +1,7 @@
 package es.ulpgc.eite.alu.diceroller.android.detail.presenter;
 
+import es.ulpgc.eite.alu.diceroller.android.common.DiceFactory;
+import es.ulpgc.eite.alu.diceroller.android.common.I_NumerosAStringBridge;
 import es.ulpgc.eite.alu.diceroller.android.mediator.DiceRollerMediatorSingleton;
 import es.ulpgc.eite.framework.android.AndroidScreenPresenter;
 import es.ulpgc.eite.framework.core.screen.I_ScreenObservable;
@@ -20,6 +22,7 @@ public class DetailPresenter
         extends AndroidScreenPresenter implements I_DetailPresenter, I_ScreenObservable {
 
     private String _resultadoTiradaStringDetail;
+    private String displayRotated = null;
 
     private I_DetailModel getDetailModel(){
         return (I_DetailModel) getScreenModel();
@@ -29,11 +32,18 @@ public class DetailPresenter
         return (I_DetailView) getScreenView();
     }
 
-    @Override
-    public void numberToStringDetail(Integer numero){
-        String numeroStringDetail = numero.toString();
-        setResultadoTiradaStringDetail(numeroStringDetail);
+    private DiceFactory factory;
+
+    private DiceFactory getDiceFactory(){
+        factory = DiceFactory.getFactory();
+        return factory;
     }
+//
+//    @Override
+//    public void numberToStringDetail(Integer numero){
+//        String numeroStringDetail = numero.toString();
+//        setResultadoTiradaStringDetail(numeroStringDetail);
+//    }
 
     @Override
     public String getResultadoTiradaStringDetail() {
@@ -48,18 +58,19 @@ public class DetailPresenter
     // CAMBIAR ESTO QUE VIENE DE LA PRINCIPAL
     @Override
     public void rollBtnPressed(){
-        int sides = Integer.parseInt(getDetailModel().getData().getSides());
-        int modif = Integer.parseInt(getDetailModel().getData().getModifier());
+        int sides = getDetailModel().getData().getSides();
+        int modif = getDetailModel().getData().getModifier();
         getDetailModel().rollDetail(sides, modif);
-        numberToStringDetail(getDetailModel().getResultadoTiradaDetail());
-        getDetailView().display(getResultadoTiradaStringDetail());
+        I_NumerosAStringBridge bridge = getDiceFactory().createBridge();
+        bridge.numberToString(getDetailModel().getResultadoTiradaDetail());
+        _resultadoTiradaStringDetail = bridge.getResultadoTiradaString();
+        getDetailView().display(_resultadoTiradaStringDetail);
     }
 
 
     @Override
     public void deleteData() {
         debug("deleteData");
-
         notifyScreenObservers(this, DiceRollerMediatorCode.DELETE, null);
     }
 
@@ -84,7 +95,6 @@ public class DetailPresenter
     @Override
     public void resumeScreen() {
         debug("resumeScreen");
-
         getDetailView().setDetailData(getDetailModel().getData());
     }
 

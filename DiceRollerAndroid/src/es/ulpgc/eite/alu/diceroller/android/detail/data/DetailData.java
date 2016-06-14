@@ -4,6 +4,7 @@ import org.droidpersistence.annotation.Column;
 import org.droidpersistence.annotation.PrimaryKey;
 import org.droidpersistence.annotation.Table;
 
+
 @Table(name="master_detail")
 public class DetailData {
 
@@ -14,14 +15,28 @@ public class DetailData {
     @Column(name = "label")
     private String label;
 
-    @Column(name = "tipo de tirada")
+    @Column(name = "descripcion")
+    private String descrip;
+
+    @Column(name = "tipo_tirada")
     private String typeOfRoll;
 
+    @Column(name = "numero_dados")
+    private int numDados;
+
     @Column(name = "dado")
-    private String sides;
+    private int sides;
 
     @Column(name = "modificador")
-    private String modifier;
+    private int modifier;
+
+    public String getDescrip() {
+        return descrip;
+    }
+
+    public void setDescrip(String descrip) {
+        this.descrip = descrip;
+    }
 
     public String getTypeOfRoll() {
         return typeOfRoll;
@@ -31,32 +46,44 @@ public class DetailData {
         this.typeOfRoll = typeOfRoll;
     }
 
-    public String getSides() {
+    public int getSides() {
         return sides;
     }
 
-    public void setSides(String sides) {
+    public void setSides(int sides) {
         this.sides = sides;
     }
 
-    public String getModifier() {
+    public int getModifier() {
         return modifier;
     }
 
-    public void setModifier(String modifier) {
+    public void setModifier(int modifier) {
         this.modifier = modifier;
+    }
+
+    public int getNumDados() {
+        return numDados;
+    }
+
+    public void setNumDados(int numDados) {
+        this.numDados = numDados;
     }
 
     public DetailData() {
         setLabel("");
+        setDescrip("");
         setTypeOfRoll("");
-        setSides("");
-        setModifier("");
+        setNumDados(0);
+        setSides(0);
+        setModifier(0);
     }
 
-    public DetailData(String txt, String type, String sid, String mod) {
+    public DetailData(String txt, String desc, String type, int num, int sid, int mod) {
         setLabel(txt);
+        setDescrip(desc);
         setTypeOfRoll(type);
+        setNumDados(num);
         setSides(sid);
         setModifier(mod);
     }
