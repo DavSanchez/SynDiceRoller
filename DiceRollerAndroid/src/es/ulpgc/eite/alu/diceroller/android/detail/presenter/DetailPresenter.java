@@ -22,7 +22,6 @@ public class DetailPresenter
         extends AndroidScreenPresenter implements I_DetailPresenter, I_ScreenObservable {
 
     private String _resultadoTiradaStringDetail;
-    private String displayRotated = null;
     private Long idData;
 
     private I_DetailModel getDetailModel(){
@@ -39,12 +38,6 @@ public class DetailPresenter
         factory = DiceFactory.getFactory();
         return factory;
     }
-//
-//    @Override
-//    public void numberToStringDetail(Integer numero){
-//        String numeroStringDetail = numero.toString();
-//        setResultadoTiradaStringDetail(numeroStringDetail);
-//    }
 
     @Override
     public String getResultadoTiradaStringDetail() {

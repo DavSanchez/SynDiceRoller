@@ -58,32 +58,11 @@ public class DiceRollerPresenter
     }
 
 
-//    @Override
-//    public void numberToString(Integer numero){
-//        String numeroString = numero.toString();
-//        setResultadoTiradaString(numeroString);
-//    }
-//
-//    @Override
-//    public String getResultadoTiradaString() {
-//        return _resultadoTiradaString;
-//    }
-//
-//    @Override
-//    public void setResultadoTiradaString(String resultadoTiradaString) {
-//        _resultadoTiradaString = resultadoTiradaString;
-//    }
-
-
     @Override
     public void createScreen() {
         debug("createScreen");
 
         getDiceRollerView().initDiceRoller();
-
-        // LIMPIAR. TODO
-        //   setDiceRoller(new DiceRollerPresenter(
-        //           getDiceRollerView(), getDiceRollerModel()));
     }
 
     @Override
@@ -136,10 +115,6 @@ public class DiceRollerPresenter
         debug("getNextState", "code", code);
 
         return new DiceRollerState(_display);
-
-        //LIMPIAR. TODO
-        //debug("getNextState", "data", data);
-        //return getScreenState();
     }
 
     @Override

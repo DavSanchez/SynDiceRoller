@@ -51,8 +51,8 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel{
     private void fillCollection() {
         debug("fillCollection");
 
-        JSONObject tiradasDB = null;
-        JSONArray tiradasArray = null;
+        JSONObject tiradasDB;
+        JSONArray tiradasArray;
         try {
             tiradasDB = new JSONObject(loadJSONFromAsset(jsonFile));
             tiradasArray = tiradasDB.getJSONArray("tiradas");
@@ -67,9 +67,7 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel{
                 DetailData data = new DetailData(label, descrip, tipoTirada, numeroDados, dado, modif);
                 getMasterDetailDatabase().saveData(data);
             }
-        } catch (JSONException e) {
-
-        }
+        } catch (JSONException e) { }
     }
 
     public String loadJSONFromAsset(String filename) {

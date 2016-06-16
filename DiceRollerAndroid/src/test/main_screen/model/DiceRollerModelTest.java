@@ -13,8 +13,6 @@ import static org.junit.Assert.*;
 public class DiceRollerModelTest {
     private I_DiceRollerModel _lanzaDados;
 
-    // MÁS TEST. TODO
-
     @Before
     public void setUp() throws Exception {
         _lanzaDados = new DiceRollerModel();
