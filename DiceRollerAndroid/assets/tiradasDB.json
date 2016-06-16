@@ -26,11 +26,11 @@
     },
     {
       "label": "Tirada 4",
-      "descripcion": "Esta es una tirada de daño con un modificador negativo. Inflige 1d8 - 5 puntos. El resultado mínimo de la tirada es 0",
+      "descripcion": "Esta es una tirada de daño con un modificador negativo. Inflige 1d12 - 5 puntos. El resultado mínimo de la tirada es 0",
       "tipo_tirada": "Damage",
       "numero_dados": 1,
-      "dado" : 8,
-      "modificador" : 5
+      "dado" : 12,
+      "modificador" : -5
     },
     {
       "label": "Tirada 5",
