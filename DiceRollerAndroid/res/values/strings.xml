@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">DiceRollerAndroid</string>
+    <string name="app_name">RollDice for RPGs</string>
     <string name="d2_text">d2</string>
     <string name="d3_text">d3</string>
     <string name="d4_text">d4</string>
