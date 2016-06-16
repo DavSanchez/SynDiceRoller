@@ -19,11 +19,17 @@ public class TiraDados implements I_TiraDados {
     @Override
     public void complexRoll(int numDados, int carasDado, int modificador) {
         int res = 0;
+        int comp;
         for (int veces = 0; veces < numDados; veces++){
             roll(carasDado);
             res += getResultadoTirada();
         }
-        setResultadoTirada(res + modificador);
+        comp = res + modificador;
+        if (comp < 0 ){
+            setResultadoTirada(0);
+        } else {
+            setResultadoTirada(comp);
+        }
     }
 
     @Override
