@@ -48,6 +48,27 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel{
         return getMasterDetailDatabase().getDataList();
     }
 
+    /*
+    *
+    * INFO PARA LA LECTURA Y PARSING DEL FICHERO JSON ALOJADO EN EL DIRECTORIO ASSETS,
+    * UTILIZADO EN LOS DOS MÉTODOS SIGUIENTES, loadJSONFromAsset() y fillCollection():
+    * http://stackoverflow.com/questions/9605913/how-to-parse-json-in-android/9606629#9606629
+    *
+    */
+
+    public String loadJSONFromAsset(String filename) {
+        String json = null;
+        try {
+            InputStream in = getCurrentMediator().getContext().getAssets().open(filename);
+            int size = in.available();
+            byte[] buffer = new byte[size];
+            in.read(buffer);
+            in.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) { }
+        return json;
+    }
+
     private void fillCollection() {
         debug("fillCollection");
 
@@ -68,19 +89,6 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel{
                 getMasterDetailDatabase().saveData(data);
             }
         } catch (JSONException e) { }
-    }
-
-    public String loadJSONFromAsset(String filename) {
-        String json = null;
-        try {
-            InputStream in = getCurrentMediator().getContext().getAssets().open(filename);
-            int size = in.available();
-            byte[] buffer = new byte[size];
-            in.read(buffer);
-            in.close();
-            json = new String(buffer, "UTF-8");
-        } catch (IOException ex) { }
-        return json;
     }
 
     @Override

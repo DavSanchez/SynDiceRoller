@@ -57,8 +57,6 @@
                 android:text="@string/d4_text"
                 android:textSize="30sp" />
 
-
-
     </LinearLayout>
 
     <LinearLayout
