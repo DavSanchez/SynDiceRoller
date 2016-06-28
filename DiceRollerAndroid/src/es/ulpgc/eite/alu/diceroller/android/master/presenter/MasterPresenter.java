@@ -12,9 +12,7 @@ import es.ulpgc.eite.alu.diceroller.android.master.view.I_MasterView;
 import es.ulpgc.eite.alu.diceroller.android.master.view.MasterView;
 import es.ulpgc.eite.alu.diceroller.android.mediator.DiceRollerMediatorCode;
 
-public class MasterPresenter extends AndroidScreenPresenter
-        implements I_MasterPresenter, I_ScreenObserver {
-
+public class MasterPresenter extends AndroidScreenPresenter implements I_MasterPresenter, I_ScreenObserver {
 
     private I_MasterModel getMasterModel() {
         return (I_MasterModel) getScreenModel();
@@ -24,16 +22,13 @@ public class MasterPresenter extends AndroidScreenPresenter
         return (I_MasterView) getScreenView();
     }
 
-
     @Override
     public void setListPosition(int position) {
-
         getMasterModel().setPosition(position);
 
         debug("setListPosition", "position", position);
         debug("setListPosition", "data", getMasterModel().getData());
 
-        //startNextScreenWithFinish(MasterDetailMediatorCode.SELECT, false);
         startNextScreenWithObserver(this, DiceRollerMediatorCode.SELECT);
     }
 
@@ -68,17 +63,12 @@ public class MasterPresenter extends AndroidScreenPresenter
     }
 
     @Override
-    public void setScreenState(
-            Class<? extends I_ScreenView> view, int code, I_ScreenState state) {
-
+    public void setScreenState(Class<? extends I_ScreenView> view, int code, I_ScreenState state) {
         debug("setScreenState", "view", view.getSimpleName());
         debug("setScreenState", "code", code);
 
         if(state != null) {
-
-            if(view.equals(MasterView.class)
-                    && code == DiceRollerMediatorCode.NULL) {
-
+            if(view.equals(MasterView.class) && code == DiceRollerMediatorCode.NULL) {
                 MasterState _state = (MasterState) state;
                 getMasterModel().setPosition(_state.getPosition());
             }
@@ -89,8 +79,8 @@ public class MasterPresenter extends AndroidScreenPresenter
     public I_ScreenState getScreenState() {
         debug("getScreenState");
 
-        MasterState state = new MasterState(getMasterModel().getPosition());
-        return state;
+        //MasterState state = new MasterState(getMasterModel().getPosition());
+        return new MasterState(getMasterModel().getPosition());
     }
 
     @Override
@@ -98,45 +88,29 @@ public class MasterPresenter extends AndroidScreenPresenter
         debug("getNextState", "view", view.getSimpleName());
         debug("getNextState", "code", code);
 
-
-        if(view.equals(DetailView.class)
-                && code == DiceRollerMediatorCode.SELECT) {
-
-            DetailState state = new DetailState(getMasterModel().getData());
-            return state;
+        if(view.equals(DetailView.class) && code == DiceRollerMediatorCode.SELECT) {
+            //DetailState state = new DetailState(getMasterModel().getData());
+            return new DetailState(getMasterModel().getData());
         }
-
         return null;
     }
 
-
     @Override
-    public I_ScreenState updateObserverState(
-            Class<? extends I_ScreenView> view, int code, I_ScreenState state) {
-
+    public I_ScreenState updateObserverState(Class<? extends I_ScreenView> view, int code, I_ScreenState state) {
         debug("updateObserverState", "view", view.getSimpleName());
         debug("updateObserverState", "code", code);
 
-
-        if(view.equals(DetailView.class)
-                && code == DiceRollerMediatorCode.DELETE) {
-
+        if(view.equals(DetailView.class) && code == DiceRollerMediatorCode.DELETE) {
             debug("updateObserverState", "position", getMasterModel().getPosition());
 
             getMasterModel().removeData();
             resumeScreen();
-
             return new DetailState();
         }
 
-
-        if(view.equals(DetailView.class)
-                && code == DiceRollerMediatorCode.BACK) {
-
+        if(view.equals(DetailView.class) && code == DiceRollerMediatorCode.BACK) {
             return null;
         }
-
         return null;
-
     }
 }

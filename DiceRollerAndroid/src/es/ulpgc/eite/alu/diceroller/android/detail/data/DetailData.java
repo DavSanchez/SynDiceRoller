@@ -34,7 +34,7 @@ public class DetailData {
         return descrip;
     }
 
-    public void setDescrip(String descrip) {
+    private void setDescrip(String descrip) {
         this.descrip = descrip;
     }
 
@@ -42,7 +42,7 @@ public class DetailData {
         return typeOfRoll;
     }
 
-    public void setTypeOfRoll(String typeOfRoll) {
+    private void setTypeOfRoll(String typeOfRoll) {
         this.typeOfRoll = typeOfRoll;
     }
 
@@ -50,7 +50,7 @@ public class DetailData {
         return sides;
     }
 
-    public void setSides(int sides) {
+    private void setSides(int sides) {
         this.sides = sides;
     }
 
@@ -58,7 +58,7 @@ public class DetailData {
         return modifier;
     }
 
-    public void setModifier(int modifier) {
+    private void setModifier(int modifier) {
         this.modifier = modifier;
     }
 
@@ -66,7 +66,7 @@ public class DetailData {
         return numDados;
     }
 
-    public void setNumDados(int numDados) {
+    private void setNumDados(int numDados) {
         this.numDados = numDados;
     }
 
@@ -100,7 +100,7 @@ public class DetailData {
         return label;
     }
 
-    public void setLabel(String txt) {
+    private void setLabel(String txt) {
         label = txt;
     }
 
@@ -108,8 +108,7 @@ public class DetailData {
     public boolean equals(Object obj) {
         if(obj instanceof DetailData){
             DetailData data = (DetailData) obj;
-
-            if(data.getId() == getId()){   //todo
+            if(data.getId().equals(getId())){
                 return true;
             }
         }

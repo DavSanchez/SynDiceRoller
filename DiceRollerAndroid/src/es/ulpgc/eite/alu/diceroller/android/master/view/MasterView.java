@@ -17,10 +17,8 @@ import java.util.List;
 
 public class MasterView extends AndroidScreenView implements I_MasterView {
 
-
     private ListView _list;
     private MasterAdapter _adapter;
-
 
     private ListView getList() {
         return _list;
@@ -37,7 +35,6 @@ public class MasterView extends AndroidScreenView implements I_MasterView {
     private void setAdapter(MasterAdapter adapter) {
         _adapter = adapter;
     }
-
 
     private int getListLayout(){
         return R.layout.master_view;
@@ -64,7 +61,6 @@ public class MasterView extends AndroidScreenView implements I_MasterView {
         setMasterListAdapter();
         setMasterListListener();
     }
-
 
     private void setMasterLayout(){
         debug("setMasterLayout");
@@ -94,17 +90,12 @@ public class MasterView extends AndroidScreenView implements I_MasterView {
         debug("setMasterListListener");
 
         getList().setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
             @Override
-            public void onItemClick(
-                    AdapterView<?> parent, View view, int position, long id) {
-
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 getMasterPresenter().setListPosition(position);
             }
         });
     }
-
-
 
     @Override
     public void setMasterCollection(List<DetailData> collection){
@@ -121,8 +112,6 @@ public class MasterView extends AndroidScreenView implements I_MasterView {
 
         getList().setSelection(position);
     }
-
-
 
     private class MasterAdapter extends ArrayAdapter<DetailData>{
 
@@ -147,24 +136,17 @@ public class MasterView extends AndroidScreenView implements I_MasterView {
 
         public MasterAdapter(MasterView _view, int _layout) {
             super(_view, _layout);
-
             _setListView(_view);
             _setRowLayout(_layout);
         }
 
         @Override
         public View getView(int position, View rowView, ViewGroup parent) {
-
-            LayoutInflater inflater = (LayoutInflater)
-                    _getListView().getSystemService(
-                            (Context.LAYOUT_INFLATER_SERVICE));
-
+            LayoutInflater inflater = (LayoutInflater) _getListView().getSystemService((Context.LAYOUT_INFLATER_SERVICE));
             rowView = inflater.inflate(_getRowLayout(), parent, false);
-
             DetailData data = getItem(position);
             TextView titleView = (TextView) rowView.findViewById(R.id.lbl_title);
             titleView.setText(data.getLabel());
-
             return rowView;
         }
     }

@@ -18,8 +18,7 @@ public class NumerosAStringBridge implements I_NumerosAStringBridge {
         return _resultadoTiradaString;
     }
 
-    @Override
-    public void setResultadoTiradaString(String resultadoTiradaString) {
+    private void setResultadoTiradaString(String resultadoTiradaString) {
         _resultadoTiradaString = resultadoTiradaString;
     }
 }

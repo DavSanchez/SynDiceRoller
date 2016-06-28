@@ -37,8 +37,7 @@ public class TiraDados implements I_TiraDados {
         return _resultadoTirada;
     }
 
-    @Override
-    public void setResultadoTirada(int resultadoTirada) {
+    private void setResultadoTirada(int resultadoTirada) {
         _resultadoTirada = resultadoTirada;
     }
 }

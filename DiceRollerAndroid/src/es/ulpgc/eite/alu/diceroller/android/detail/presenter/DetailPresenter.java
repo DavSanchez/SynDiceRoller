@@ -18,8 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-public class DetailPresenter
-        extends AndroidScreenPresenter implements I_DetailPresenter, I_ScreenObservable {
+public class DetailPresenter extends AndroidScreenPresenter implements I_DetailPresenter, I_ScreenObservable {
 
     private String _resultadoTiradaStringDetail;
     private Long idData;
@@ -32,16 +31,8 @@ public class DetailPresenter
         return (I_DetailView) getScreenView();
     }
 
-    private DiceFactory factory;
-
     private DiceFactory getDiceFactory(){
-        factory = DiceFactory.getFactory();
-        return factory;
-    }
-
-    @Override
-    public String getResultadoTiradaStringDetail() {
-        return _resultadoTiradaStringDetail;
+        return DiceFactory.getFactory();
     }
 
     @Override
@@ -61,13 +52,11 @@ public class DetailPresenter
         getDetailView().display(_resultadoTiradaStringDetail);
     }
 
-
     @Override
     public void deleteData() {
         debug("deleteData");
         notifyScreenObservers(this, DiceRollerMediatorCode.DELETE, null);
     }
-
 
     @Override
     public void createScreen() {
@@ -110,17 +99,13 @@ public class DetailPresenter
     }
 
     @Override
-    public void setScreenState(
-            Class<? extends I_ScreenView> view, int code, I_ScreenState state) {
+    public void setScreenState(Class<? extends I_ScreenView> view, int code, I_ScreenState state) {
 
         debug("setScreenState", "view", view.getSimpleName());
         debug("setScreenState", "code", code);
 
         if(state != null){
-
-            if(view.equals(MasterView.class)
-                    && code == DiceRollerMediatorCode.SELECT) {
-
+            if(view.equals(MasterView.class) && code == DiceRollerMediatorCode.SELECT) {
                 DetailState _state = (DetailState) state;
                 getDetailModel().setData(_state.getData());
             }
@@ -131,8 +116,8 @@ public class DetailPresenter
     public I_ScreenState getScreenState() {
         debug("getScreenState");
 
-        DetailState state = new DetailState(getDetailModel().getData());
-        return state;
+        //DetailState state = new DetailState(getDetailModel().getData());
+        return new DetailState(getDetailModel().getData());
     }
 
     @Override
@@ -145,16 +130,12 @@ public class DetailPresenter
 
 
     @Override
-    public void updateObservableState(
-            Class<? extends I_ScreenView> view, int code, I_ScreenState state) {
+    public void updateObservableState(Class<? extends I_ScreenView> view, int code, I_ScreenState state) {
 
         debug("updateObservableState", "view", view.getSimpleName());
         debug("updateObservableState", "code", code);
 
-
-        if(view.equals(MasterView.class)
-                && code == DiceRollerMediatorCode.DELETE) {
-
+        if(view.equals(MasterView.class) && code == DiceRollerMediatorCode.DELETE) {
             finishScreen();
         }
     }

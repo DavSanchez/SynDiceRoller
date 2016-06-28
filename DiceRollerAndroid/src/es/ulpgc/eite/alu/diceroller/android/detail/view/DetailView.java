@@ -14,29 +14,10 @@ public class DetailView extends AndroidScreenView implements I_DetailView {
         return (I_DetailPresenter) getScreenPresenter();
     }
 
-//    @Override
-//    public void setDiceRollerButtons() {
-//
-//        registerListener(R.id.btn_remove);
-//        registerListener(R.id.btn_roll);
-//    }
-//
-//    private void registerListener(int btnId) {
-//
-//        View btn = findViewById(btnId);
-//
-//        if (btn != null) {
-//            btn.setOnClickListener((View.OnClickListener) this);
-//        } else {
-//            debug("registerListener", "error", "resource not available");
-//        }
-//    }
-
     @Override
     public void setDetailBtnListenerRemove(){
         Button deleteView = (Button) findViewById(R.id.btn_remove);
         deleteView.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 getDetailPresenter().deleteData();
@@ -48,7 +29,6 @@ public class DetailView extends AndroidScreenView implements I_DetailView {
     public void setDetailBtnListenerRoll(){
         Button deleteView = (Button) findViewById(R.id.btn_roll);
         deleteView.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 getDetailPresenter().rollBtnPressed();

@@ -6,8 +6,6 @@ package es.ulpgc.eite.alu.diceroller.android.common;
 public class DiceFactory {
 
     private static DiceFactory instance;
-    private I_TiraDados dado;
-    private I_NumerosAStringBridge bridge;
     private DiceFactory() { }
 
     public static synchronized DiceFactory getFactory()
@@ -17,19 +15,11 @@ public class DiceFactory {
         return instance;
     }
 
-    public I_TiraDados spawnDice(){
-        {
-            if (dado == null)
-                dado = new TiraDados();
-            return dado;
-        }
+    public I_TiraDados createDice(){
+            return  new TiraDados();
     }
 
     public I_NumerosAStringBridge createBridge(){
-        {
-            if (bridge == null)
-                bridge =  new NumerosAStringBridge();
-            return bridge;
-        }
+            return new NumerosAStringBridge();
     }
 }

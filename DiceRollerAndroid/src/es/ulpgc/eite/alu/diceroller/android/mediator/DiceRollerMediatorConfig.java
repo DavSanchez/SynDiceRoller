@@ -31,13 +31,10 @@ public class DiceRollerMediatorConfig extends MediatorConfig {
     private void setDiceRollerConfig() {
         setDiceRollerScreenCollection();
         setDiceRollerTransitionCollection();
-
     }
 
     private void setDiceRollerTransitionCollection() {
         getTransitions().add(new MediatorTransition(DiceRollerView.class, null, DiceRollerMediatorCode.CLICK));
-
-        // MASTER-DETAIL. CHECK DiceRollerMediatorCode.CLICK...
         getTransitions().add(new MediatorTransition(DiceRollerView.class,
                 MasterView.class, DiceRollerMediatorCode.LISTA));
         getTransitions().add(new MediatorTransition(MasterView.class,
@@ -46,10 +43,8 @@ public class DiceRollerMediatorConfig extends MediatorConfig {
 
     private void setDiceRollerScreenCollection() {
         getScreens().add(new MediatorScreen(DiceRollerView.class, DiceRollerPresenter.class, DiceRollerModel.class));
-
         getScreens().add(new MediatorScreen(MasterView.class,
                 MasterPresenter.class, MasterModel.class, DatabaseMasterDetail.class));
-
         getScreens().add(new MediatorScreen(DetailView.class,
                 DetailPresenter.class, DetailModel.class, DatabaseMasterDetail.class));
         

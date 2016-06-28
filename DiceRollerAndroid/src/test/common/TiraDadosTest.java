@@ -30,16 +30,21 @@ public class TiraDadosTest {
 
     @Test
     public void complexRollPositivo() throws Exception {
-        _dado.complexRoll(3, 20, 5);
+        int numeroDados = 3;
+        int numeroCaras = 20;
+        int modificador = 5;
+        _dado.complexRoll(numeroDados, numeroCaras, modificador);
         int tirada =  _dado.getResultadoTirada();
         assertTrue(tirada <= 65 && tirada >= 8);
     }
 
     @Test
     public void complexRollNegativo() throws Exception {
-        _dado.complexRoll(2, 24, -4);
+        int numeroDados = 2;
+        int numeroCaras = 24;
+        int modificador = -4;
+        _dado.complexRoll(numeroDados, numeroCaras, modificador);
         int tirada = _dado.getResultadoTirada();
         assertTrue(tirada <= 44 && tirada >= 0);
     }
-
 }

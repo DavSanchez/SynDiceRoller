@@ -16,11 +16,6 @@ import java.util.List;
 public class MasterModel extends AndroidScreenModel implements I_MasterModel{
 
     private int position;
-    String jsonFile = "tiradasDB.json";
-
-    private I_MasterPresenter getMasterPresenter() {
-        return (I_MasterPresenter) getScreenPresenter();
-    }
 
     private I_MasterDetailDatabase getMasterDetailDatabase(){
         return (I_MasterDetailDatabase) getScreenDatabase();
@@ -51,30 +46,17 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel{
     /*
     *
     * INFO PARA LA LECTURA Y PARSING DEL FICHERO JSON ALOJADO EN EL DIRECTORIO ASSETS,
-    * UTILIZADO EN LOS DOS MÉTODOS SIGUIENTES, loadJSONFromAsset() y fillCollection():
+    * UTILIZADO EN LOS DOS MÉTODOS SIGUIENTES, fillCollection() y loadJSONFromAsset():
     * http://stackoverflow.com/questions/9605913/how-to-parse-json-in-android/9606629#9606629
     *
     */
-
-    public String loadJSONFromAsset(String filename) {
-        String json = null;
-        try {
-            InputStream in = getCurrentMediator().getContext().getAssets().open(filename);
-            int size = in.available();
-            byte[] buffer = new byte[size];
-            in.read(buffer);
-            in.close();
-            json = new String(buffer, "UTF-8");
-        } catch (IOException ex) { }
-        return json;
-    }
-
     private void fillCollection() {
         debug("fillCollection");
 
         JSONObject tiradasDB;
         JSONArray tiradasArray;
         try {
+            String jsonFile = "tiradasDB.json";
             tiradasDB = new JSONObject(loadJSONFromAsset(jsonFile));
             tiradasArray = tiradasDB.getJSONArray("tiradas");
             for (int i = 0; i < tiradasArray.length(); i++) {
@@ -91,6 +73,19 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel{
         } catch (JSONException e) { }
     }
 
+    private String loadJSONFromAsset(String filename) {
+        String json = null;
+        try {
+            InputStream in = getCurrentMediator().getContext().getAssets().open(filename);
+            int size = in.available();
+            byte[] buffer = new byte[size];
+            in.read(buffer);
+            in.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) { }
+        return json;
+    }
+
     @Override
     public DetailData getData() {
         return getMasterDetailDatabase().getDataList().get(getPosition());
@@ -101,5 +96,4 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel{
         getMasterDetailDatabase().deleteData(getData().getId());
         debug("removeData", "collection", getCollection());
     }
-
 }

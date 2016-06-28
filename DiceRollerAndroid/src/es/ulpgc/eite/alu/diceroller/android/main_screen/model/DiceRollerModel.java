@@ -10,20 +10,16 @@ import es.ulpgc.eite.framework.android.AndroidScreenModel;
 public class DiceRollerModel extends AndroidScreenModel implements I_DiceRollerModel {
     private int _resultadoTirada;
 
-    private DiceFactory factory;
-
     private DiceFactory getDiceFactory(){
-        factory = DiceFactory.getFactory();
-        return factory;
+        return DiceFactory.getFactory();
     }
 
     @Override
     public void roll(int carasDado) {
-        I_TiraDados dado = getDiceFactory().spawnDice();
+        I_TiraDados dado = getDiceFactory().createDice();
         dado.roll(carasDado);
         setResultadoTirada(dado.getResultadoTirada());
     }
-
 
     @Override
     public int getResultadoTirada() {

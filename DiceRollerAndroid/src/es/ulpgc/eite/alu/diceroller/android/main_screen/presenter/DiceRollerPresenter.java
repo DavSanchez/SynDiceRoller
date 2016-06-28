@@ -15,9 +15,7 @@ import es.ulpgc.eite.framework.core.screen.I_ScreenView;
 /**
  * Created by David on 12/4/16.
  */
-public class DiceRollerPresenter
-        //extends AndroidScreenPresenter implements I_DiceRollerPresenter, I_ScreenObserver {
-        extends AndroidScreenPresenter implements I_DiceRollerPresenter {
+public class DiceRollerPresenter extends AndroidScreenPresenter implements I_DiceRollerPresenter {
 
     private String _display;
     private String _resultadoTiradaString;
@@ -26,20 +24,8 @@ public class DiceRollerPresenter
 
     private I_DiceRollerModel getDiceRollerModel(){ return (I_DiceRollerModel) getScreenModel(); }
 
-    // REVISAR ESTAS TRES LÍNEAS POR SI CÓDIGO MUERTO. TODO
-
-    private I_DiceRollerPresenter _presenter;
-
-    private void setDiceRoller (I_DiceRollerPresenter presenter) { _presenter = presenter; }
-
-    private I_DiceRollerPresenter getDiceRoller() { return _presenter; }
-
-
-    private DiceFactory factory;
-
     private DiceFactory getDiceFactory(){
-        factory = DiceFactory.getFactory();
-        return factory;
+        return DiceFactory.getFactory();
     }
 
     @Override
@@ -53,7 +39,6 @@ public class DiceRollerPresenter
 
     @Override
     public void botonListaPressed(){
-        //startNextScreenWithObserver(this, DiceRollerMediatorCode.LISTA);
         startNextScreenWithFinish(DiceRollerMediatorCode.LISTA, false);
     }
 
@@ -61,7 +46,6 @@ public class DiceRollerPresenter
     @Override
     public void createScreen() {
         debug("createScreen");
-
         getDiceRollerView().initDiceRoller();
     }
 
@@ -74,7 +58,6 @@ public class DiceRollerPresenter
     public void resumeScreen() {
         debug("resumeScreen");
         getDiceRollerView().display(_resultadoTiradaString);
-
     }
 
     @Override
@@ -85,7 +68,6 @@ public class DiceRollerPresenter
     @Override
     public void rotateScreen() {
         debug("rotateScreen");
-
     }
 
     @Override
@@ -126,11 +108,4 @@ public class DiceRollerPresenter
     public void setDisplay(String display) {
         _display = display;
     }
-
-    /*
-    @Override
-    public I_ScreenState updateObserverState(Class<? extends I_ScreenView> view, int code, I_ScreenState state) {
-        return null;
-    }
-    */
 }
