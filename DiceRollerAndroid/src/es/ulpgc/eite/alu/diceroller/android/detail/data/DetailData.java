@@ -4,7 +4,6 @@ import org.droidpersistence.annotation.Column;
 import org.droidpersistence.annotation.PrimaryKey;
 import org.droidpersistence.annotation.Table;
 
-
 @Table(name="master_detail")
 public class DetailData {
 
@@ -34,40 +33,40 @@ public class DetailData {
         return descrip;
     }
 
-    private void setDescrip(String descrip) {
-        this.descrip = descrip;
+    public void setDescrip(String description) {
+        descrip = description;
     }
 
     public String getTypeOfRoll() {
         return typeOfRoll;
     }
 
-    private void setTypeOfRoll(String typeOfRoll) {
-        this.typeOfRoll = typeOfRoll;
+    public void setTypeOfRoll(String tipoTirada) {
+        typeOfRoll = tipoTirada;
     }
 
     public int getSides() {
         return sides;
     }
 
-    private void setSides(int sides) {
-        this.sides = sides;
+    public void setSides(int caras) {
+        sides = caras;
     }
 
     public int getModifier() {
         return modifier;
     }
 
-    private void setModifier(int modifier) {
-        this.modifier = modifier;
+    public void setModifier(int modificador) {
+        modifier = modificador;
     }
 
     public int getNumDados() {
         return numDados;
     }
 
-    private void setNumDados(int numDados) {
-        this.numDados = numDados;
+    public void setNumDados(int numeroDados) {
+        numDados = numeroDados;
     }
 
     public DetailData() {
@@ -100,7 +99,7 @@ public class DetailData {
         return label;
     }
 
-    private void setLabel(String txt) {
+    public void setLabel(String txt) {
         label = txt;
     }
 
