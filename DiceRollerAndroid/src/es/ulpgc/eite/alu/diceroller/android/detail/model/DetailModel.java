@@ -6,8 +6,6 @@ import es.ulpgc.eite.framework.android.AndroidScreenModel;
 import es.ulpgc.eite.alu.diceroller.android.detail.data.DetailData;
 import es.ulpgc.eite.alu.diceroller.android.detail.presenter.I_DetailPresenter;
 
-import java.util.Random;
-
 public class DetailModel extends AndroidScreenModel implements I_DetailModel{
 
     private DetailData _data;
@@ -36,7 +34,7 @@ public class DetailModel extends AndroidScreenModel implements I_DetailModel{
 
     @Override
     public void rollDetail(int numDados, int carasDado, int modificador) {
-        I_TiraDados dado = getDiceFactory().spawnDice();
+        I_TiraDados dado = getDiceFactory().createDice();
         dado.complexRoll(numDados, carasDado, modificador);
         setResultadoTiradaDetail(dado.getResultadoTirada());
     }

@@ -1,8 +1,5 @@
 package es.ulpgc.eite.alu.diceroller.android.common;
 
-/**
- * Created by David on 10/6/16.
- */
 public class NumerosAStringBridge implements I_NumerosAStringBridge {
 
     private String _resultadoTiradaString;
