@@ -4,7 +4,6 @@ import es.ulpgc.eite.alu.diceroller.android.common.DiceFactory;
 import es.ulpgc.eite.alu.diceroller.android.common.I_TiraDados;
 import es.ulpgc.eite.framework.android.AndroidScreenModel;
 import es.ulpgc.eite.alu.diceroller.android.detail.data.DetailData;
-import es.ulpgc.eite.alu.diceroller.android.detail.presenter.I_DetailPresenter;
 
 public class DetailModel extends AndroidScreenModel implements I_DetailModel{
 

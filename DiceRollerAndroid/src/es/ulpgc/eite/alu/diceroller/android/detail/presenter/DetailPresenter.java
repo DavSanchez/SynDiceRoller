@@ -2,7 +2,6 @@ package es.ulpgc.eite.alu.diceroller.android.detail.presenter;
 
 import es.ulpgc.eite.alu.diceroller.android.common.DiceFactory;
 import es.ulpgc.eite.alu.diceroller.android.common.I_NumerosAStringBridge;
-import es.ulpgc.eite.alu.diceroller.android.mediator.DiceRollerMediatorSingleton;
 import es.ulpgc.eite.framework.android.AndroidScreenPresenter;
 import es.ulpgc.eite.framework.core.screen.I_ScreenObservable;
 import es.ulpgc.eite.framework.core.screen.I_ScreenState;
@@ -13,10 +12,6 @@ import es.ulpgc.eite.alu.diceroller.android.detail.state.DetailState;
 import es.ulpgc.eite.alu.diceroller.android.detail.view.I_DetailView;
 import es.ulpgc.eite.alu.diceroller.android.master.view.MasterView;
 import es.ulpgc.eite.alu.diceroller.android.mediator.DiceRollerMediatorCode;
-
-import java.io.IOException;
-import java.io.InputStream;
-
 
 public class DetailPresenter extends AndroidScreenPresenter implements I_DetailPresenter, I_ScreenObservable {
 
@@ -48,7 +43,7 @@ public class DetailPresenter extends AndroidScreenPresenter implements I_DetailP
         getDetailModel().rollDetail(numDados, sides, modif);
         I_NumerosAStringBridge bridge = getDiceFactory().createBridge();
         bridge.numberToString(getDetailModel().getResultadoTiradaDetail());
-        _resultadoTiradaStringDetail = bridge.getResultadoTiradaString();
+        setResultadoTiradaStringDetail(bridge.getResultadoTiradaString());
         getDetailView().display(_resultadoTiradaStringDetail);
     }
 
@@ -116,7 +111,6 @@ public class DetailPresenter extends AndroidScreenPresenter implements I_DetailP
     public I_ScreenState getScreenState() {
         debug("getScreenState");
 
-        //DetailState state = new DetailState(getDetailModel().getData());
         return new DetailState(getDetailModel().getData());
     }
 

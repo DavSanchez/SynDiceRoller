@@ -4,9 +4,6 @@ import es.ulpgc.eite.alu.diceroller.android.common.DiceFactory;
 import es.ulpgc.eite.alu.diceroller.android.common.I_TiraDados;
 import es.ulpgc.eite.framework.android.AndroidScreenModel;
 
-/**
- * Created by David on 12/4/16.
- */
 public class DiceRollerModel extends AndroidScreenModel implements I_DiceRollerModel {
     private int _resultadoTirada;
 

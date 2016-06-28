@@ -3,7 +3,6 @@ package es.ulpgc.eite.alu.diceroller.android.master.model;
 import es.ulpgc.eite.framework.android.AndroidScreenModel;
 import es.ulpgc.eite.alu.diceroller.android.detail.data.DetailData;
 import es.ulpgc.eite.alu.diceroller.android.database.I_MasterDetailDatabase;
-import es.ulpgc.eite.alu.diceroller.android.master.presenter.I_MasterPresenter;
 import es.ulpgc.eite.framework.android.I_AndroidMediatorSingleton;
 import org.json.JSONArray;
 import org.json.JSONException;

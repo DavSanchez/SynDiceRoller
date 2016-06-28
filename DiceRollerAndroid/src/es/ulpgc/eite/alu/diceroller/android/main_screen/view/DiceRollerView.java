@@ -6,9 +6,6 @@ import es.ulpgc.eite.alu.diceroller.android.R;
 import es.ulpgc.eite.alu.diceroller.android.main_screen.presenter.I_DiceRollerPresenter;
 import es.ulpgc.eite.framework.android.AndroidScreenView;
 
-/**
- * Created by David on 12/4/16.
- */
 public class DiceRollerView extends AndroidScreenView implements I_DiceRollerView, View.OnClickListener {
 
     private I_DiceRollerPresenter getDiceRollerPresenter(){

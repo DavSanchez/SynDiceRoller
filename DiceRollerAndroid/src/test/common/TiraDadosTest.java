@@ -7,9 +7,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-/**
- * Created by David on 16/6/16.
- */
 public class TiraDadosTest {
     private I_TiraDados _dado;
 

@@ -15,9 +15,6 @@ import es.ulpgc.eite.framework.core.mediator.MediatorConfig;
 import es.ulpgc.eite.framework.core.mediator.MediatorScreen;
 import es.ulpgc.eite.framework.core.mediator.MediatorTransition;
 
-/**
- * Created by David on 12/4/16.
- */
 public class DiceRollerMediatorConfig extends MediatorConfig {
     public DiceRollerMediatorConfig(I_MediatorSingleton mediator) {
         super(mediator);

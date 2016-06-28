@@ -7,9 +7,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by David on 16/6/16.
- */
 public class NumerosAStringBridgeTest {
 
     private I_NumerosAStringBridge _bridge;
