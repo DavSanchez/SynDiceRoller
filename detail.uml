@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>es.ulpgc.eite.alu.diceroller.android.detail</OriginalElement>
+  <nodes>
+    <node x="-83.81654676258995" y="10.39568345323741">es.ulpgc.eite.alu.diceroller.android.detail.view.I_DetailView</node>
+    <node x="355.5755395683452" y="8.474820143884813">es.ulpgc.eite.alu.diceroller.android.detail.model.I_DetailModel</node>
+    <node x="754.769784172662" y="6.237410071942435">es.ulpgc.eite.alu.diceroller.android.detail.presenter.I_DetailPresenter</node>
+    <node x="-113.31654676258995" y="222.3956834532374">es.ulpgc.eite.alu.diceroller.android.detail.view.DetailView</node>
+    <node x="597.6474820143885" y="621.820143884892">es.ulpgc.eite.alu.diceroller.android.detail.state.DetailState</node>
+    <node x="650.769784172662" y="152.23741007194243">es.ulpgc.eite.alu.diceroller.android.detail.presenter.DetailPresenter</node>
+    <node x="337.5755395683452" y="154.4748201438848">es.ulpgc.eite.alu.diceroller.android.detail.model.DetailModel</node>
+    <node x="124.74820143884892" y="459.64748201438846">es.ulpgc.eite.alu.diceroller.android.detail.data.DetailData</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.detail.presenter.DetailPresenter" target="es.ulpgc.eite.alu.diceroller.android.detail.presenter.I_DetailPresenter">
+      <point x="0.0" y="-191.5" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.detail.model.DetailModel" target="es.ulpgc.eite.alu.diceroller.android.detail.model.I_DetailModel">
+      <point x="0.0" y="-59.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.detail.presenter.DetailPresenter" target="es.ulpgc.eite.alu.diceroller.android.detail.state.DetailState">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.detail.view.DetailView" target="es.ulpgc.eite.alu.diceroller.android.detail.view.I_DetailView">
+      <point x="0.0" y="-103.0" />
+      <point x="0.0" y="81.0" />
+    </edge>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.detail.presenter.DetailPresenter" target="es.ulpgc.eite.alu.diceroller.android.detail.data.DetailData">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.detail.state.DetailState" target="es.ulpgc.eite.alu.diceroller.android.detail.data.DetailData">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.detail.model.DetailModel" target="es.ulpgc.eite.alu.diceroller.android.detail.data.DetailData">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.5582329317269076" x="482.5" y="369.50000000000006" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

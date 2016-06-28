@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>es.ulpgc.eite.alu.diceroller.android.database</OriginalElement>
+  <nodes>
+    <node x="-638.4782959624519" y="51.56666573356101">es.ulpgc.eite.alu.diceroller.android.database.DatabaseMasterDetail</node>
+    <node x="80.52967975813897" y="247.63664165943513">es.ulpgc.eite.alu.diceroller.android.database.DetailTable</node>
+    <node x="-37.559471488956774" y="44.967926825854484">es.ulpgc.eite.alu.diceroller.android.database.DatabaseMasterDetailUtils</node>
+    <node x="49.723511463202954" y="325.346177532682">es.ulpgc.eite.alu.diceroller.android.database.DetailDao</node>
+    <node x="-32.99537412871257" y="398.4353917644094">es.ulpgc.eite.alu.diceroller.android.database.DatabaseClauseArg</node>
+    <node x="-1013.4537179594846" y="53.02393649282911">es.ulpgc.eite.alu.diceroller.android.database.I_MasterDetailDatabase</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.database.DatabaseMasterDetailUtils" target="es.ulpgc.eite.alu.diceroller.android.database.DetailTable">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.database.DatabaseMasterDetail" target="es.ulpgc.eite.alu.diceroller.android.database.DatabaseMasterDetailUtils">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.database.DatabaseMasterDetail" target="es.ulpgc.eite.alu.diceroller.android.database.DetailTable">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.database.DatabaseMasterDetail" target="es.ulpgc.eite.alu.diceroller.android.database.DetailDao">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.database.DatabaseMasterDetail" target="es.ulpgc.eite.alu.diceroller.android.database.I_MasterDetailDatabase">
+      <point x="0.0" y="-257.5" />
+      <point x="0.0" y="103.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.6839654025282768" x="-272.5" y="305.5" />
+  <SelectedNodes>
+    <node>es.ulpgc.eite.alu.diceroller.android.database.DatabaseClauseArg</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

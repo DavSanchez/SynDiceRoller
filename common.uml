@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>es.ulpgc.eite.alu.diceroller.android.common</OriginalElement>
+  <nodes>
+    <node x="-38.67625899280574" y="21.637889688249402">es.ulpgc.eite.alu.diceroller.android.common.DiceFactory</node>
+    <node x="326.8057553956834" y="-9.669064748201432">es.ulpgc.eite.alu.diceroller.android.common.I_NumerosAStringBridge</node>
+    <node x="-287.9232613908873" y="136.33093525179856">es.ulpgc.eite.alu.diceroller.android.common.TiraDados</node>
+    <node x="326.8057553956834" y="114.33093525179856">es.ulpgc.eite.alu.diceroller.android.common.NumerosAStringBridge</node>
+    <node x="-287.9232613908873" y="-9.669064748201436">es.ulpgc.eite.alu.diceroller.android.common.I_TiraDados</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.common.DiceFactory" target="es.ulpgc.eite.alu.diceroller.android.common.TiraDados">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.common.DiceFactory" target="es.ulpgc.eite.alu.diceroller.android.common.NumerosAStringBridge">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.common.NumerosAStringBridge" target="es.ulpgc.eite.alu.diceroller.android.common.I_NumerosAStringBridge">
+      <point x="0.0" y="-37.0" />
+      <point x="0.0" y="37.0" />
+    </edge>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.common.TiraDados" target="es.ulpgc.eite.alu.diceroller.android.common.I_TiraDados">
+      <point x="0.0" y="-48.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="147.5" y="111.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

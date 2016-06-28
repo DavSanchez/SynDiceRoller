@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>es.ulpgc.eite.alu.diceroller.android.main_screen</OriginalElement>
+  <nodes>
+    <node x="-739.7230215827338" y="22.985611510791387">es.ulpgc.eite.alu.diceroller.android.main_screen.presenter.I_DiceRollerPresenter</node>
+    <node x="-886.2230215827338" y="168.9856115107914">es.ulpgc.eite.alu.diceroller.android.main_screen.presenter.DiceRollerPresenter</node>
+    <node x="156.23021582733804" y="180.53237410071938">es.ulpgc.eite.alu.diceroller.android.main_screen.model.DiceRollerModel</node>
+    <node x="-215.83812949640298" y="28.43884892086328">es.ulpgc.eite.alu.diceroller.android.main_screen.view.I_DiceRollerView</node>
+    <node x="217.73021582733804" y="56.53237410071938">es.ulpgc.eite.alu.diceroller.android.main_screen.model.I_DiceRollerModel</node>
+    <node x="-200.94964028776974" y="440.61151079136687">es.ulpgc.eite.alu.diceroller.android.main_screen.state.DiceRollerState</node>
+    <node x="-347.338129496403" y="174.43884892086328">es.ulpgc.eite.alu.diceroller.android.main_screen.view.DiceRollerView</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.main_screen.model.DiceRollerModel" target="es.ulpgc.eite.alu.diceroller.android.main_screen.model.I_DiceRollerModel">
+      <point x="0.0" y="-48.0" />
+      <point x="0.0" y="37.0" />
+    </edge>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.main_screen.view.DiceRollerView" target="es.ulpgc.eite.alu.diceroller.android.main_screen.view.I_DiceRollerView">
+      <point x="0.0" y="-103.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.main_screen.presenter.DiceRollerPresenter" target="es.ulpgc.eite.alu.diceroller.android.main_screen.presenter.I_DiceRollerPresenter">
+      <point x="0.0" y="-180.5" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.main_screen.presenter.DiceRollerPresenter" target="es.ulpgc.eite.alu.diceroller.android.main_screen.state.DiceRollerState">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7687125748502994" x="-229.0" y="279.5" />
+  <SelectedNodes>
+    <node>es.ulpgc.eite.alu.diceroller.android.main_screen.state.DiceRollerState</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

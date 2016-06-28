@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>es.ulpgc.eite.alu.diceroller.android.master</OriginalElement>
+  <nodes>
+    <node x="80.63669064748183" y="-65.33812949640281">es.ulpgc.eite.alu.diceroller.android.master.model.I_MasterModel</node>
+    <node x="-391.7805755395684" y="-3.0431654676258972">es.ulpgc.eite.alu.diceroller.android.master.presenter.I_MasterPresenter</node>
+    <node x="-941.064748201439" y="-48.690647482014384">es.ulpgc.eite.alu.diceroller.android.master.view.I_MasterView</node>
+    <node x="-557.2805755395684" y="97.9568345323741">es.ulpgc.eite.alu.diceroller.android.master.presenter.MasterPresenter</node>
+    <node x="-1075.0503597122304" y="573.9736211031175">es.ulpgc.eite.alu.diceroller.android.master.view.MasterView.MasterAdapter</node>
+    <node x="-1062.064748201439" y="97.30935251798562">es.ulpgc.eite.alu.diceroller.android.master.view.MasterView</node>
+    <node x="-511.1079136690646" y="488.51798561151077">es.ulpgc.eite.alu.diceroller.android.master.state.MasterState</node>
+    <node x="-60.86330935251817" y="102.66187050359719">es.ulpgc.eite.alu.diceroller.android.master.model.MasterModel</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.master.presenter.MasterPresenter" target="es.ulpgc.eite.alu.diceroller.android.master.presenter.I_MasterPresenter">
+      <point x="0.0" y="-147.0" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.master.view.MasterView" target="es.ulpgc.eite.alu.diceroller.android.master.view.MasterView.MasterAdapter">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.master.view.MasterView.MasterAdapter" target="es.ulpgc.eite.alu.diceroller.android.master.view.MasterView">
+      <point x="0.0" y="-103.5" />
+      <point x="0.0" y="213.5" />
+    </edge>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.master.model.MasterModel" target="es.ulpgc.eite.alu.diceroller.android.master.model.I_MasterModel">
+      <point x="0.0" y="-103.0" />
+      <point x="0.0" y="59.0" />
+    </edge>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.master.view.MasterView" target="es.ulpgc.eite.alu.diceroller.android.master.view.I_MasterView">
+      <point x="0.0" y="-213.5" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="es.ulpgc.eite.alu.diceroller.android.master.presenter.MasterPresenter" target="es.ulpgc.eite.alu.diceroller.android.master.state.MasterState">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.4809688581314879" x="-313.5" y="357.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Inner Classes</Category>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
