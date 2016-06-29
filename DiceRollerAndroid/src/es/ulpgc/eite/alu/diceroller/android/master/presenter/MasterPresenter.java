@@ -79,7 +79,6 @@ public class MasterPresenter extends AndroidScreenPresenter implements I_MasterP
     public I_ScreenState getScreenState() {
         debug("getScreenState");
 
-        //MasterState state = new MasterState(getMasterModel().getPosition());
         return new MasterState(getMasterModel().getPosition());
     }
 
@@ -89,7 +88,6 @@ public class MasterPresenter extends AndroidScreenPresenter implements I_MasterP
         debug("getNextState", "code", code);
 
         if(view.equals(DetailView.class) && code == DiceRollerMediatorCode.SELECT) {
-            //DetailState state = new DetailState(getMasterModel().getData());
             return new DetailState(getMasterModel().getData());
         }
         return null;

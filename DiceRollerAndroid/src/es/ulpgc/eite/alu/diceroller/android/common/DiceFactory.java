@@ -13,7 +13,7 @@ public class DiceFactory {
     }
 
     public I_TiraDados createDice(){
-            return  new TiraDados();
+            return new TiraDados();
     }
 
     public I_NumerosAStringBridge createBridge(){

@@ -42,13 +42,14 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel{
         return getMasterDetailDatabase().getDataList();
     }
 
-    /*
-    *
-    * INFO PARA LA LECTURA Y PARSING DEL FICHERO JSON ALOJADO EN EL DIRECTORIO ASSETS,
-    * UTILIZADO EN LOS DOS MÉTODOS SIGUIENTES, fillCollection() y loadJSONFromAsset():
-    * http://stackoverflow.com/questions/9605913/how-to-parse-json-in-android/9606629#9606629
-    *
-    */
+    /**
+     * Lee elementos de la base de datos y los convierte en objetos DetailData.
+     *
+     * @see {@link #loadJSONFromAsset(String filename)}
+     *
+     * Ver http://stackoverflow.com/questions/9605913/how-to-parse-json-in-android/9606629#9606629 para más info
+     *
+     */
     private void fillCollection() {
         debug("fillCollection");
 
@@ -72,6 +73,11 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel{
         } catch (JSONException e) { }
     }
 
+    /**
+     *
+     * @param filename
+     * @return
+     */
     private String loadJSONFromAsset(String filename) {
         String json = null;
         try {
