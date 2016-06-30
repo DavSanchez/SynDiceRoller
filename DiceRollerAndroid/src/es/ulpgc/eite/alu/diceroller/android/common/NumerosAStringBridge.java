@@ -4,6 +4,11 @@ public class NumerosAStringBridge implements I_NumerosAStringBridge {
 
     private String _resultadoTiradaString;
 
+    /**
+     * Convierte un numero entero en un String
+     *
+     * @param numero numero entero a convertir en String
+     */
     @Override
     public void numberToString(Integer numero){
         String numeroString = numero.toString();

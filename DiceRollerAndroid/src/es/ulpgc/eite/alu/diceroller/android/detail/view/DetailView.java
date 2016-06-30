@@ -14,6 +14,9 @@ public class DetailView extends AndroidScreenView implements I_DetailView {
         return (I_DetailPresenter) getScreenPresenter();
     }
 
+    /**
+     * Establece el Listener y la accion correspondiente a pulsar el boton Remove
+     */
     @Override
     public void setDetailBtnListenerRemove(){
         Button deleteView = (Button) findViewById(R.id.btn_remove);
@@ -25,6 +28,9 @@ public class DetailView extends AndroidScreenView implements I_DetailView {
         });
     }
 
+    /**
+     * Establece el Listener y la accion correspondiente a pulsar el boton Roll
+     */
     @Override
     public void setDetailBtnListenerRoll(){
         Button deleteView = (Button) findViewById(R.id.btn_roll);
@@ -36,6 +42,9 @@ public class DetailView extends AndroidScreenView implements I_DetailView {
         });
     }
 
+    /**
+     * Carga el layout correspondiente a la vista detalle
+     */
     @Override
     public void setDetailLayout(){
         debug("setDetailLayout");
@@ -47,18 +56,33 @@ public class DetailView extends AndroidScreenView implements I_DetailView {
         return R.layout.detail_view;
     }
 
+    /**
+     * Rellena el campo de titulo de la vista detalle con el campo titulo del elemento actual
+     *
+     * @param data el objeto DetailData del que va a sacarse la informacion
+     */
     @Override
     public void setDetailData(DetailData data){
         TextView dataView = (TextView) findViewById(R.id.lbl_data);
         dataView.setText(data.getLabel());
     }
 
+    /**
+     * Rellena el campo de descripcion de la vista detalle con el campo descripcion descripcion del elemento actual
+     *
+     * @param data el objeto DetailData del que va a sacarse la informacion
+     */
     @Override
     public void setDescriptionData(DetailData data){
         TextView dataView = (TextView) findViewById(R.id.descr_data);
         dataView.setText(data.getDescrip());
     }
 
+    /**
+     * Representa en la pantalla del dispositivo la informacion del parametro
+     *
+     * @param numeroPantalla el numero a representar
+     */
     @Override
     public void display(String numeroPantalla) {
         debug ("display", "numeroPantalla", numeroPantalla);

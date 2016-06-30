@@ -6,6 +6,15 @@ public class TiraDados implements I_TiraDados {
 
     private int _resultadoTirada;
 
+    /**
+     * Simula una tirada de dados
+     * <p>
+     *     Genera un numero aleatorio entre 1 y el numero de caras del dado especificado mediante el parametro.
+     *
+     * @see java.util.Random
+     *
+     * @param carasDado numero de caras del dado a tirar
+     */
     @Override
     public void roll(int carasDado) {
         Random tirada = new Random();
@@ -13,6 +22,20 @@ public class TiraDados implements I_TiraDados {
         setResultadoTirada(resultado);
     }
 
+    /**
+     * Simula una tirada de dados mas compleja.
+     * <p>
+     *     Utilizando el metodo roll(), genera un numero aleatorio que es la suma de tantas tiradas de dado como
+     *     indique el parametro numDados. Los dados tendran tantas caras como indique el parametro carasDado.
+     *     A la suma de estos dados se le suma un modificador entero indicado por el parametro modificador.
+     *     Si el resultado de esta suma es negativo el resultado final sera cero.
+     *
+     * @see {@link #roll(int)}
+     *
+     * @param numDados numero de dados a tirar
+     * @param carasDado caras de los dados a tirar
+     * @param modificador numero entero que se suma a la tirada. Puede ser negativo
+     */
     @Override
     public void complexRoll(int numDados, int carasDado, int modificador) {
         int res = 0;

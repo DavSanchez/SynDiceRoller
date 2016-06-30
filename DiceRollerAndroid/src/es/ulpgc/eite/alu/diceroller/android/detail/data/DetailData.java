@@ -4,6 +4,19 @@ import org.droidpersistence.annotation.Column;
 import org.droidpersistence.annotation.PrimaryKey;
 import org.droidpersistence.annotation.Table;
 
+/**
+ * Clase en cuyos objetos se almacenan los elementos de la base de datos
+ * <p>
+ *     Consta de un constructor basico con los campos nulos y
+ *     otro constructor donde pueden especificarse los valores
+ *     <p>
+ *         Aunque el IDE puede indicar que los setters pueden ser privados,
+ *         ponerlos de esa forma causa que los elementos de la lista de la
+ *         vista de maestro y todos los campos de las vistas detalle
+ *         aparezcan vacios.
+ *
+ * @see es.ulpgc.eite.alu.diceroller.android.master.model.MasterModel
+ */
 @Table(name="master_detail")
 public class DetailData {
 

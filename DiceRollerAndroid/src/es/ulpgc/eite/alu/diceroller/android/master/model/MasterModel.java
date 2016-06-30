@@ -34,6 +34,13 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel{
         position = pos;
     }
 
+    /**
+     * Pide la lista de entradas de la vista maestro
+     * <p>
+     *     Si la lista de la vista maestro esta vacia se ejecuta el metodo fillCollection() para llenarla
+     *
+     * @return lista de objetos DetailData que son los elementos de la base de datos
+     */
     @Override
     public List<DetailData> getCollection(){
         if(getMasterDetailDatabase().getDataList().size() == 0){
@@ -45,10 +52,9 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel{
     /**
      * Lee elementos de la base de datos y los convierte en objetos DetailData.
      *
-     * @see {@link #loadJSONFromAsset(String filename)}
+     * @see {@link #loadJSONFromAsset(String)}
      *
-     * Ver http://stackoverflow.com/questions/9605913/how-to-parse-json-in-android/9606629#9606629 para más info
-     *
+     * Ver http://stackoverflow.com/questions/9605913/how-to-parse-json-in-android/9606629#9606629 para mas info
      */
     private void fillCollection() {
         debug("fillCollection");
@@ -74,9 +80,10 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel{
     }
 
     /**
+     * Parsea el fichero JSON alojado en el directorio SynDiceRoller/DiceRollerAndroid/assets
      *
-     * @param filename
-     * @return
+     * @param filename nombre del fichero JSON
+     * @return String resultante del parseo
      */
     private String loadJSONFromAsset(String filename) {
         String json = null;
@@ -96,6 +103,9 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel{
         return getMasterDetailDatabase().getDataList().get(getPosition());
     }
 
+    /**
+     * Elimina una entrada de la base de datos java y de la lista de la vista maestro
+     */
     @Override
     public void removeData(){
         getMasterDetailDatabase().deleteData(getData().getId());

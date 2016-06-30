@@ -10,6 +10,13 @@ public class DetailModel extends AndroidScreenModel implements I_DetailModel{
     private DetailData _data;
     private int _resultadoTiradaDetail;
 
+    /**
+     * Llama a la factory, DiceFactory
+     *
+     * @see es.ulpgc.eite.alu.diceroller.android.common.DiceFactory
+     *
+     * @return una instancia de la factory
+     */
     private DiceFactory getDiceFactory(){
         return DiceFactory.getFactory();
     }
@@ -24,6 +31,15 @@ public class DetailModel extends AndroidScreenModel implements I_DetailModel{
         _data = data;
     }
 
+    /**
+     * Llama al metodo complexRoll de la clase TiraDados
+     *
+     * @see es.ulpgc.eite.alu.diceroller.android.common.TiraDados
+     *
+     * @param numDados numero de dados a tirar
+     * @param carasDado caras de los dados a tirar
+     * @param modificador numero entero que se suma a la tirada. Puede ser negativo
+     */
     @Override
     public void rollDetail(int numDados, int carasDado, int modificador) {
         I_TiraDados dado = getDiceFactory().createDice();
