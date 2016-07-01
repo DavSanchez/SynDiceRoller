@@ -25,12 +25,10 @@ public class TiraDados implements I_TiraDados {
     /**
      * Simula una tirada de dados mas compleja.
      * <p>
-     *     Utilizando el metodo roll(), genera un numero aleatorio que es la suma de tantas tiradas de dado como
-     *     indique el parametro numDados. Los dados tendran tantas caras como indique el parametro carasDado.
-     *     A la suma de estos dados se le suma un modificador entero indicado por el parametro modificador.
+     *     Utilizando el metodo roll() de esta misma clase, genera un numero aleatorio que es la suma de tantas tiradas
+     *     de dado como indique el parametro numDados. Los dados tendran tantas caras como indique el parametro
+     *     carasDado. A la suma de estos dados se le suma un modificador entero indicado por el parametro modificador.
      *     Si el resultado de esta suma es negativo el resultado final sera cero.
-     *
-     * @see {@link #roll(int)}
      *
      * @param numDados numero de dados a tirar
      * @param carasDado caras de los dados a tirar
