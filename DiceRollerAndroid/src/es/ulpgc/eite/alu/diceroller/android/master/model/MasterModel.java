@@ -50,9 +50,7 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel{
     }
 
     /**
-     * Lee elementos de la base de datos y los convierte en objetos DetailData.
-     *
-     * @see {@link #loadJSONFromAsset(String)}
+     * Lee elementos de la base de datos con loadJSONFromAsset() y los convierte en objetos DetailData.
      *
      * Ver http://stackoverflow.com/questions/9605913/how-to-parse-json-in-android/9606629#9606629 para mas info
      */
@@ -81,6 +79,8 @@ public class MasterModel extends AndroidScreenModel implements I_MasterModel{
 
     /**
      * Parsea el fichero JSON alojado en el directorio SynDiceRoller/DiceRollerAndroid/assets
+     *
+     * Ver http://stackoverflow.com/questions/9605913/how-to-parse-json-in-android/9606629#9606629 para mas info
      *
      * @param filename nombre del fichero JSON
      * @return String resultante del parseo
