@@ -30,6 +30,9 @@ public class DiceRollerMediatorConfig extends MediatorConfig {
         setDiceRollerTransitionCollection();
     }
 
+    /**
+     * Especifica las transiciones entre pantallas y el codigo necesario para efectuarlas
+     */
     private void setDiceRollerTransitionCollection() {
         getTransitions().add(new MediatorTransition(DiceRollerView.class, null, DiceRollerMediatorCode.CLICK));
         getTransitions().add(new MediatorTransition(DiceRollerView.class,
@@ -38,6 +41,9 @@ public class DiceRollerMediatorConfig extends MediatorConfig {
                 DetailView.class, DiceRollerMediatorCode.SELECT));
     }
 
+    /**
+     * Carga los conjuntos de Modelo, Vista y Presentador de las pantallas de la aplicacion
+     */
     private void setDiceRollerScreenCollection() {
         getScreens().add(new MediatorScreen(DiceRollerView.class, DiceRollerPresenter.class, DiceRollerModel.class));
         getScreens().add(new MediatorScreen(MasterView.class,

@@ -53,6 +53,9 @@ public class MasterView extends AndroidScreenView implements I_MasterView {
         return (I_MasterPresenter) getScreenPresenter();
     }
 
+    /**
+     * Carga el layout de la pantalla maestro y el contenido de la lista y sus listeners
+     */
     @Override
     public void setMasterScreen() {
         setMasterLayout();

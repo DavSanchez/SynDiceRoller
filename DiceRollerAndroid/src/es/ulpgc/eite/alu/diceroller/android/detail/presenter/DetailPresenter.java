@@ -72,6 +72,13 @@ public class DetailPresenter extends AndroidScreenPresenter implements I_DetailP
         notifyScreenObservers(this, DiceRollerMediatorCode.DELETE, null);
     }
 
+    /**
+     * Llama a los metodos necesarios para crear la pantalla detalle
+     * <p>
+     *     Llama a los metodos de la vista setDetailLayout(), setDetailBtnListenerRemove() y setDetailBtnListenerRoll()
+     *     para iniciar la pantalla y los listeners de los botones. Llama al metodo setData() del modelo para presentar
+     *     los datos en la pantalla
+     */
     @Override
     public void createScreen() {
         debug("createScreen");
@@ -121,6 +128,13 @@ public class DetailPresenter extends AndroidScreenPresenter implements I_DetailP
         debug("rotateScreen");
     }
 
+    /**
+     * Almacena el estado de la pantalla de detalle
+     *
+     * @param view clase de la vista
+     * @param code codigo del mediador
+     * @param state objeto del estado de la aplicacion
+     */
     @Override
     public void setScreenState(Class<? extends I_ScreenView> view, int code, I_ScreenState state) {
 
@@ -135,6 +149,11 @@ public class DetailPresenter extends AndroidScreenPresenter implements I_DetailP
         }
     }
 
+    /**
+     * Obtiene los datos del estado de la pantalla detalle
+     *
+     * @return objeto DetailState con los datos del estado
+     */
     @Override
     public I_ScreenState getScreenState() {
         debug("getScreenState");
@@ -150,6 +169,15 @@ public class DetailPresenter extends AndroidScreenPresenter implements I_DetailP
         return null;
     }
 
+    /**
+     * Finaliza la pantalla detalle si se ha borrado el elemento de la lista maestro
+     * <p>
+     *     Si el codigo del mediador es el de borrado, finaliza la pantalla actual del detalle
+     *
+     * @param view clase de la vista
+     * @param code codigo del mediador
+     * @param state objeto del estado de la aplicacion
+     */
     @Override
     public void updateObservableState(Class<? extends I_ScreenView> view, int code, I_ScreenState state) {
 

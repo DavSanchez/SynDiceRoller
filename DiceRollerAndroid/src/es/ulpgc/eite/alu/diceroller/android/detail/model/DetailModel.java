@@ -32,7 +32,7 @@ public class DetailModel extends AndroidScreenModel implements I_DetailModel{
     }
 
     /**
-     * Llama al metodo complexRoll de la clase TiraDados
+     * Llama al metodo complexRoll de la clase TiraDados y almacena el resultado
      *
      * @see es.ulpgc.eite.alu.diceroller.android.common.TiraDados
      *

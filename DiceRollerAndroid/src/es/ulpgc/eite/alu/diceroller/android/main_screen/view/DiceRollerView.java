@@ -12,11 +12,19 @@ public class DiceRollerView extends AndroidScreenView implements I_DiceRollerVie
         return (I_DiceRollerPresenter) getScreenPresenter();
     }
 
+    /**
+     * Obtiene el identificador del layout de la pantalla principal
+     *
+     * @return el identificador del layout de la pantalla principal
+     */
     @Override
     public int getDiceRollerLayout() {
         return R.layout.diceroller_main_view;
     }
 
+    /**
+     * Inicia la pantalla principal cargando el layout y los listeners de los botones
+     */
     @Override
     public void initDiceRoller() {
         debug("initDiceRoller");
@@ -25,6 +33,9 @@ public class DiceRollerView extends AndroidScreenView implements I_DiceRollerVie
         setDiceRollerButtons();
     }
 
+    /**
+     * Llama al registerListener para cada boton de la pantalla principal
+     */
     private void setDiceRollerButtons() {
 
         registerListener(R.id.buttond2);
@@ -41,6 +52,11 @@ public class DiceRollerView extends AndroidScreenView implements I_DiceRollerVie
         registerListener(R.id.buttonListaTiradas);
     }
 
+    /**
+     * Habilita el listener para un boton determinado
+     *
+     * @param btnId el identificador del boton
+     */
     private void registerListener(int btnId) {
 
         View btn = findViewById(btnId);
@@ -52,6 +68,16 @@ public class DiceRollerView extends AndroidScreenView implements I_DiceRollerVie
         }
     }
 
+    /**
+     * Especifica la accion a realizar al pulsar cada boton
+     * <p>
+     *     Para los botones de dado llama al metodo getNumeroCaras() y usa
+     *     el retorno de este metodo como parametro del metodo dicePressed()
+     *     del presentador. Para el boton de Lista llama al metodo
+     *     botonListaPressed() del presentador
+     *
+     * @param btn el boton pulsado
+     */
     @Override
     public void onClick(View btn) {
         debug("onClick");
@@ -81,6 +107,13 @@ public class DiceRollerView extends AndroidScreenView implements I_DiceRollerVie
         }
     }
 
+    /**
+     * Obtiene el numero de caras de un boton de dado en forma de numero entero
+     *
+     * @param btn el identificador del boton del dado
+     *
+     * @return el numero entero correspondiente a las caras del dado
+     */
     private int getNumeroCaras(View btn) {
         int caras = btn.getId();
         switch (caras) {
@@ -118,6 +151,11 @@ public class DiceRollerView extends AndroidScreenView implements I_DiceRollerVie
         return caras;
     }
 
+    /**
+     * Muestra en la pantalla del dispositivo el numero indicado
+     *
+     * @param numeroPantalla el numero entero en una variable String
+     */
     @Override
     public void display(String numeroPantalla) {
         debug ("display", "numeroPantalla", numeroPantalla);

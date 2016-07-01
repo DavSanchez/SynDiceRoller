@@ -6,7 +6,7 @@ public interface I_DetailModel {
     DetailData getData();
     void setData(DetailData data);
     /**
-     * Llama al metodo complexRoll de la clase TiraDados
+     * Llama al metodo complexRoll de la clase TiraDados y almacena el resultado
      *
      * @see es.ulpgc.eite.alu.diceroller.android.common.TiraDados
      *

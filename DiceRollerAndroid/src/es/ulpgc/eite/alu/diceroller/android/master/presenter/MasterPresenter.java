@@ -62,6 +62,13 @@ public class MasterPresenter extends AndroidScreenPresenter implements I_MasterP
         debug("rotateScreen");
     }
 
+    /**
+     * Almacena el estado de la pantalla de maestro
+     *
+     * @param view clase de la vista
+     * @param code codigo del mediador
+     * @param state objeto del estado de la aplicacion
+     */
     @Override
     public void setScreenState(Class<? extends I_ScreenView> view, int code, I_ScreenState state) {
         debug("setScreenState", "view", view.getSimpleName());
@@ -75,6 +82,11 @@ public class MasterPresenter extends AndroidScreenPresenter implements I_MasterP
         }
     }
 
+    /**
+     * Obtiene los datos del estado de la pantalla maestro
+     *
+     * @return objeto MasterState con los datos del estado
+     */
     @Override
     public I_ScreenState getScreenState() {
         debug("getScreenState");
@@ -82,6 +94,14 @@ public class MasterPresenter extends AndroidScreenPresenter implements I_MasterP
         return new MasterState(getMasterModel().getPosition());
     }
 
+    /**
+     * Al seleccionarse un elemento, se obtiene el estado de su vista detalle
+     *
+     * @param view clase de la vista
+     * @param code codigo del mediador
+     *
+     * @return objeto DetailState con el estado del detalle
+     */
     @Override
     public I_ScreenState getNextState(Class<? extends I_ScreenView> view, int code) {
         debug("getNextState", "view", view.getSimpleName());
@@ -93,6 +113,16 @@ public class MasterPresenter extends AndroidScreenPresenter implements I_MasterP
         return null;
     }
 
+    /**
+     * Actualiza la pantalla maestro si se ha borrado el elemento de la lista detalle
+     * <p>
+     *     Si el codigo del mediador es el de borrado, se borra el elemento de la lista y se recarga la pantalla maestro
+     *     Si el codigo del mediador es el de ir hacia atras, no ocurre nada.
+     *
+     * @param view clase de la vista
+     * @param code codigo del mediador
+     * @param state objeto del estado de la aplicacion
+     */
     @Override
     public I_ScreenState updateObserverState(Class<? extends I_ScreenView> view, int code, I_ScreenState state) {
         debug("updateObserverState", "view", view.getSimpleName());

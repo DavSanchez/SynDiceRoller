@@ -23,21 +23,42 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
         return DiceFactory.getFactory();
     }
 
+    /**
+     * Define la accion a realizar al pulsar un boton de dado de la pantalla principal
+     * <p>
+     *     Llama a la factory para crear una instancia de NumerosAStringBridge
+     *     con la que convertir a string el numero almacenado en el modelo al
+     *     realizar la tirada de dados con el metodo roll(), obtenido con
+     *     getResultadoTirada(). Tras esto, usa el display() de la vista para
+     *     mostrarlo en pantalla.
+     *
+     * @see es.ulpgc.eite.alu.diceroller.android.common.TiraDados
+     * @see es.ulpgc.eite.alu.diceroller.android.main_screen.model.DiceRollerModel
+     *
+     * @param carasDado numero de caras del dado a tirar
+     */
     @Override
-    public void dicePressed(int caras){
-        getDiceRollerModel().roll(caras);
+    public void dicePressed(int carasDado){
+        getDiceRollerModel().roll(carasDado);
         I_NumerosAStringBridge bridge = getDiceFactory().createBridge();
         bridge.numberToString(getDiceRollerModel().getResultadoTirada());
         _resultadoTiradaString = bridge.getResultadoTiradaString();
         getDiceRollerView().display(_resultadoTiradaString);
     }
 
+    /**
+     * Define la accion a realizar al pulsar el boton Lista de la pantalla principal
+     * <p>
+     *     Llama al metodo startNextScreenWithFinish para pasar a la siguiente pantalla
+     */
     @Override
     public void botonListaPressed(){
         startNextScreenWithFinish(DiceRollerMediatorCode.LISTA, false);
     }
 
-
+    /**
+     * Llama al metodo initDiceRoller() de la vista para crear la pantalla
+     */
     @Override
     public void createScreen() {
         debug("createScreen");
@@ -65,6 +86,13 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
         debug("rotateScreen");
     }
 
+    /**
+     * Almacena el estado de la pantalla principal para la vista
+     *
+     * @param view clase de la vista
+     * @param code codigo del mediador
+     * @param state objeto del estado de la aplicacion
+     */
     @Override
     public void setScreenState(Class<? extends I_ScreenView> view, int code, I_ScreenState state) {
         debug("getNextState", "view", view.getSimpleName());
@@ -78,6 +106,11 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
         }
     }
 
+    /**
+     * Obtiene los datos del estado de la pantalla principal
+     *
+     * @return objeto DiceRollerState con los datos del estado
+     */
     @Override
     public I_ScreenState getScreenState() {
         DiceRollerState _state = new DiceRollerState();
@@ -86,6 +119,13 @@ public class DiceRollerPresenter extends AndroidScreenPresenter implements I_Dic
         return _state;
     }
 
+    /**
+     * Obtiene el estado siguiente para la vista
+     *
+     * @param view clase de la vista
+     * @param code codigo del mediador
+     * @return objeto DiceRollerState con los datos del estado
+     */
     @Override
     public I_ScreenState getNextState(Class<? extends I_ScreenView> view, int code) {
         debug("getNextState", "view", view.getSimpleName());
