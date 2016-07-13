@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DiceRollerAndroid/DiceRollerAndroid.iml" filepath="$PROJECT_DIR$/DiceRollerAndroid/DiceRollerAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DiceRollerAndroidTest/DiceRollerAndroidTest.iml" filepath="$PROJECT_DIR$/DiceRollerAndroidTest/DiceRollerAndroidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/SynDiceRoller.iml" filepath="$PROJECT_DIR$/.idea/modules/SynDiceRoller.iml" />
     </modules>
   </component>
